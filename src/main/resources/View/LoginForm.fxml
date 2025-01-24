@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="312.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginFormContrller">
+   <children>
+      <ImageView fitHeight="498.0" fitWidth="449.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../3dlogin.jpg" />
+         </image>
+      </ImageView>
+      <TextField layoutX="184.0" layoutY="232.0" promptText="               Email" />
+      <JFXButton layoutX="206.0" layoutY="354.0" prefHeight="26.0" prefWidth="110.0" text="Login">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </JFXButton>
+      <PasswordField layoutX="185.0" layoutY="290.0" promptText="            Password" />
+      <ImageView fitHeight="128.0" fitWidth="183.0" layoutX="197.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../loginwordimg.png" />
+         </image>
+      </ImageView>
+      <Hyperlink layoutX="279.0" layoutY="403.0" text="Click Here" textFill="#ef0000" />
+      <Label layoutX="178.0" layoutY="406.0" prefHeight="18.0" prefWidth="102.0" text="Forgot Password  ?" />
+   </children>
+</AnchorPane>
