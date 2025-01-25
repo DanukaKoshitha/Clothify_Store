@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Dashboard"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Dashboard">
+   <children>
+      <Label alignment="CENTER" layoutX="129.0" layoutY="25.0" prefHeight="18.0" prefWidth="362.0" text="Hi, Welcome back !">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <TreeView layoutX="88.0" layoutY="81.0" prefHeight="134.0" prefWidth="141.0" style="-fx-background-color: #ff3838;" />
+      <Pane layoutX="96.0" layoutY="87.0" prefHeight="123.0" prefWidth="126.0" style="-fx-background-color: #D6A2E8;">
+         <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="20.0" prefHeight="18.0" prefWidth="95.0" text="Today Sales">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TreeView layoutX="330.0" layoutY="82.0" prefHeight="134.0" prefWidth="141.0" style="-fx-background-color: #ff3838;" />
+      <Pane layoutX="338.0" layoutY="88.0" prefHeight="123.0" prefWidth="126.0" style="-fx-background-color: #ffb8b8;">
+         <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="20.0" prefHeight="25.0" prefWidth="101.0" text="Total Income">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TreeView layoutX="88.0" layoutY="237.0" prefHeight="134.0" prefWidth="141.0" style="-fx-background-color: #ff3838;" />
+      <Pane layoutX="96.0" layoutY="243.0" prefHeight="123.0" prefWidth="126.0" style="-fx-background-color: #ffb8b8;">
+         <children>
+            <Label alignment="CENTER" layoutX="16.0" layoutY="23.0" prefHeight="18.0" prefWidth="95.0" text="New Users">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TreeView layoutX="332.0" layoutY="237.0" prefHeight="134.0" prefWidth="141.0" style="-fx-background-color: #ff3838;" />
+      <Pane layoutX="340.0" layoutY="243.0" prefHeight="123.0" prefWidth="126.0" style="-fx-background-color: #D6A2E8;">
+         <children>
+            <Label alignment="CENTER" layoutX="16.0" layoutY="21.0" prefHeight="18.0" prefWidth="95.0" text="Employee">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>

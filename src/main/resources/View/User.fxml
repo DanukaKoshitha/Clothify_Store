@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User">
+   <children>
+      <Label layoutX="15.0" layoutY="15.0" prefHeight="18.0" prefWidth="64.0" text="User">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TableView layoutX="21.0" layoutY="162.0" prefHeight="218.0" prefWidth="558.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="ID" />
+          <TableColumn prefWidth="204.0" text="Email" />
+            <TableColumn prefWidth="168.0" text="Password" />
+            <TableColumn prefWidth="111.199951171875" text="Role" />
+        </columns>
+      </TableView>
+      <Pane layoutX="21.0" layoutY="74.0" prefHeight="26.0" prefWidth="163.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 10;">
+         <effect>
+            <Glow />
+         </effect>
+      </Pane>
+      <Pane layoutX="415.0" layoutY="74.0" prefHeight="26.0" prefWidth="163.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 10;">
+         <effect>
+            <Glow />
+         </effect>
+      </Pane>
+      <Pane layoutX="207.0" layoutY="74.0" prefHeight="26.0" prefWidth="163.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 10;">
+         <effect>
+            <Glow />
+         </effect>
+      </Pane>
+      <Separator layoutX="388.0" layoutY="38.0" orientation="VERTICAL" prefHeight="106.0" prefWidth="8.0" />
+      <Label layoutX="27.0" layoutY="48.0" prefHeight="18.0" prefWidth="51.0" text="E-mail">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="212.0" layoutY="49.0" prefHeight="18.0" prefWidth="64.0" text="Password">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="420.0" layoutY="49.0" prefHeight="18.0" prefWidth="79.0" text="Search User">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="427.0" layoutY="119.0" onAction="#btnSearchOnAction" prefWidth="64.0" style="-fx-background-radius: 10;" text="Search" />
+      <JFXButton layoutX="501.0" layoutY="119.0" onAction="#btnCancelOnAction" prefWidth="64.0" style="-fx-background-radius: 10; -fx-background-color: #e1b12c;" text="Cancel" />
+      <JFXButton layoutX="86.0" layoutY="119.0" onAction="#btnRegisterOnAction" prefWidth="64.0" style="-fx-background-radius: 10; -fx-background-color: #55E6C1;" text="Register">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="164.0" layoutY="119.0" onAction="#btnUpdateOnAction" prefWidth="64.0" style="-fx-background-radius: 10; -fx-background-color: #D6A2E8;" text="Modify" />
+      <JFXButton layoutX="244.0" layoutY="119.0" onAction="#btnDeleteOnAction" prefWidth="64.0" style="-fx-background-radius: 10; -fx-background-color: #eb2f06;" text="Remove" />
+   </children>
+</AnchorPane>
