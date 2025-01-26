@@ -36,7 +36,14 @@ public class Frame implements Initializable {
     public void btnProductOnAction(ActionEvent actionEvent) {
     }
 
-    public void btnUserOnAction(ActionEvent actionEvent) {
+    public void btnUserOnAction(ActionEvent actionEvent) throws IOException {
+        URL url = this.getClass().getResource("View/User.fxml");
+
+        assert url != null;
+
+        Parent load = FXMLLoader.load(url);
+        this.loadfom.getChildren().clear();
+        this.loadfom.getChildren().add(load);
     }
 
     public void btnDashboardOnAction(ActionEvent actionEvent) throws IOException {

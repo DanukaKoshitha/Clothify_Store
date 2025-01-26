@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User">
    <children>
       <Label layoutX="15.0" layoutY="15.0" prefHeight="18.0" prefWidth="64.0" text="User">
          <font>
@@ -20,23 +15,23 @@
       </Label>
       <TableView layoutX="21.0" layoutY="162.0" prefHeight="218.0" prefWidth="558.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="204.0" text="Email" />
-            <TableColumn prefWidth="168.0" text="Password" />
-            <TableColumn prefWidth="111.199951171875" text="Role" />
+          <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colEmail" prefWidth="204.0" text="Email" />
+            <TableColumn fx:id="colPassword" prefWidth="168.0" text="Password" />
+            <TableColumn fx:id="colRole" prefWidth="111.199951171875" text="Role" />
         </columns>
       </TableView>
-      <Pane layoutX="21.0" layoutY="74.0" prefHeight="26.0" prefWidth="163.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 10;">
+      <Pane fx:id="lblEmail" layoutX="21.0" layoutY="74.0" prefHeight="26.0" prefWidth="163.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 10;">
          <effect>
             <Glow />
          </effect>
       </Pane>
-      <Pane layoutX="415.0" layoutY="74.0" prefHeight="26.0" prefWidth="163.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 10;">
+      <Pane fx:id="lblSearch" layoutX="415.0" layoutY="74.0" prefHeight="26.0" prefWidth="163.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 10;">
          <effect>
             <Glow />
          </effect>
       </Pane>
-      <Pane layoutX="207.0" layoutY="74.0" prefHeight="26.0" prefWidth="163.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 10;">
+      <Pane fx:id="lblPassword" layoutX="207.0" layoutY="74.0" prefHeight="26.0" prefWidth="163.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 10;">
          <effect>
             <Glow />
          </effect>
