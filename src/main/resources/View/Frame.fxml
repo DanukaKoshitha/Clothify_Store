@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="475.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frame">
+<AnchorPane prefHeight="475.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frame">
    <children>
       <Pane prefHeight="50.0" prefWidth="754.0" style="-fx-background-color: #3742fa;">
          <children>
@@ -44,7 +41,7 @@
                   <Insets top="5.0" />
                </opaqueInsets>
             </JFXButton>
-            <JFXButton layoutX="22.0" layoutY="363.0" onAction="#btnLogoutOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: red;" text="Logout" textFill="#fcfcfc">
+            <JFXButton layoutX="22.0" layoutY="373.0" onAction="#btnLogoutOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: red;" text="Logout" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -52,7 +49,7 @@
                   <Insets top="5.0" />
                </opaqueInsets>
             </JFXButton>
-            <JFXButton layoutX="21.0" layoutY="307.0" onAction="#btnOrderOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Order" textFill="#fcfcfc">
+            <JFXButton layoutX="21.0" layoutY="324.0" onAction="#btnOrderOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Orders" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -60,7 +57,7 @@
                   <Insets top="5.0" />
                </opaqueInsets>
             </JFXButton>
-            <JFXButton layoutX="21.0" layoutY="249.0" onAction="#btnSupplierOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Supplier" textFill="#fcfcfc">
+            <JFXButton layoutX="21.0" layoutY="275.0" onAction="#btnSupplierOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Supplier" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -68,7 +65,7 @@
                   <Insets top="5.0" />
                </opaqueInsets>
             </JFXButton>
-            <JFXButton layoutX="22.0" layoutY="193.0" onAction="#btnProductOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Product" textFill="#fcfcfc">
+            <JFXButton layoutX="22.0" layoutY="224.0" onAction="#btnProductOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Product" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -76,7 +73,7 @@
                   <Insets top="5.0" />
                </opaqueInsets>
             </JFXButton>
-            <JFXButton layoutX="22.0" layoutY="135.0" onAction="#btnUserOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="User" textFill="#fcfcfc">
+            <JFXButton layoutX="22.0" layoutY="174.0" onAction="#btnUserOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="User" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -89,6 +86,14 @@
                   <Image url="@img.png" />
                </image>
             </ImageView>
+            <JFXButton layoutX="21.0" layoutY="126.0" onAction="#btnPlaceOrderOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Place Order" textFill="#fcfcfc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets top="5.0" />
+               </opaqueInsets>
+            </JFXButton>
          </children>
       </Pane>
       <AnchorPane fx:id="loadfom" layoutX="164.0" layoutY="50.0" prefHeight="426.0" prefWidth="590.0" />
