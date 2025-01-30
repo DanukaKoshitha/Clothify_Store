@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.User.UserFormController">
    <children>
-      <Label layoutX="15.0" layoutY="15.0" prefHeight="18.0" prefWidth="64.0" text="User">
+      <Label layoutX="15.0" layoutY="15.0" prefHeight="18.0" prefWidth="64.0" text="controller.User.User">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -47,7 +47,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="420.0" layoutY="49.0" prefHeight="18.0" prefWidth="79.0" text="Search User">
+      <Label layoutX="420.0" layoutY="49.0" prefHeight="18.0" prefWidth="79.0" text="Search controller.User.User">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

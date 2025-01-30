@@ -1,8 +1,10 @@
+package controller.User;
+
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.layout.Pane;
 
-public class User {
+public class UserFormController {
     public TableColumn colID;
     public TableColumn colEmail;
     public TableColumn colPassword;
