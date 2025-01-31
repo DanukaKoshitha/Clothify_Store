@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.Product.ProductFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="500.0" prefWidth="665.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Product.ProductFormController">
+   <children>
+      <Label layoutX="19.0" layoutY="15.0" text="Product">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Pane layoutX="219.0" layoutY="12.0" prefHeight="26.0" prefWidth="361.0" style="-fx-background-color: #ecf0f1; -fx-background-radius: 50;">
+         <children>
+            <TextField layoutX="30.0" prefHeight="26.0" prefWidth="333.0" promptText="Search Product" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+         </children>
+      </Pane>
+      <TreeView layoutX="13.0" layoutY="49.0" prefHeight="438.0" prefWidth="430.0" style="-fx-border-color: blue;" />
+      <TreeView layoutX="447.0" layoutY="49.0" prefHeight="438.0" prefWidth="206.0" style="-fx-border-color: blue;" />
+      <Label layoutX="454.0" layoutY="55.0" text="Product Details">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="631.0" layoutY="56.0" prefHeight="18.0" prefWidth="14.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text=" +" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="70.0" fitWidth="135.0" layoutX="491.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="459.0" layoutY="167.0" text="ID">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="513.0" layoutY="167.0" prefHeight="16.0" prefWidth="87.0" text="P000" textFill="#2e86de">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="458.0" layoutY="197.0" text="Cat.">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <JFXComboBox layoutX="512.0" layoutY="190.0" prefHeight="26.0" prefWidth="135.0" promptText="Select Category" />
+      <Label layoutX="457.0" layoutY="231.0" text="Name">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="458.0" layoutY="266.0" text="Size">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <JFXComboBox layoutX="512.0" layoutY="258.0" prefHeight="26.0" prefWidth="135.0" promptText="Select Size" />
+      <Label layoutX="454.0" layoutY="304.0" text="Supplier">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <JFXComboBox layoutX="512.0" layoutY="300.0" prefHeight="26.0" prefWidth="135.0" promptText="Select Supplier" />
+      <TextField layoutX="512.0" layoutY="227.0" prefHeight="26.0" prefWidth="135.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+      <Label layoutX="455.0" layoutY="346.0" text="QTY">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="511.0" layoutY="343.0" prefHeight="26.0" prefWidth="135.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+      <Label layoutX="455.0" layoutY="382.0" text="Price">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="511.0" layoutY="378.0" prefHeight="26.0" prefWidth="135.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+      <Label layoutX="456.0" layoutY="415.0" text="Image">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="458.0" layoutY="450.0" prefHeight="26.0" prefWidth="55.0" style="-fx-background-color: #74b9ff; -fx-background-radius: 5;" text="Add" textFill="#fcfcfc" />
+      <JFXButton layoutX="522.0" layoutY="450.0" style="-fx-background-color: #636e72; -fx-background-radius: 5;" text="Update" textFill="WHITE" />
+      <JFXButton layoutX="587.0" layoutY="449.0" prefHeight="26.0" prefWidth="55.0" style="-fx-background-color: #d63031; -fx-background-radius: 5;" text="Delete" textFill="WHITE" />
+      <JFXButton layoutX="511.0" layoutY="411.0" prefHeight="26.0" prefWidth="135.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" text="Set Image" />
+   </children>
 </AnchorPane>

@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="475.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorderFram.Frame">
+<AnchorPane prefHeight="475.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorderFram.Frame">
    <children>
-      <Pane prefHeight="50.0" prefWidth="754.0" style="-fx-background-color: #3742fa;">
+      <Pane prefHeight="50.0" prefWidth="830.0" style="-fx-background-color: #3742fa;">
          <children>
             <Separator layoutX="576.0" layoutY="7.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="1.0" />
             <Separator layoutX="444.0" layoutY="7.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="1.0" />
@@ -31,7 +34,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutY="50.0" prefHeight="426.0" prefWidth="164.0" style="-fx-background-color: #ced6e0;">
+      <Pane layoutY="50.0" prefHeight="500.0" prefWidth="164.0" style="-fx-background-color: #ced6e0;">
          <children>
             <JFXButton layoutX="22.0" layoutY="79.0" onAction="#btnDashboardOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Dashboard" textFill="#fcfcfc">
                <font>
@@ -96,6 +99,6 @@
             </JFXButton>
          </children>
       </Pane>
-      <AnchorPane fx:id="loadfom" layoutX="164.0" layoutY="50.0" prefHeight="426.0" prefWidth="590.0" />
+      <AnchorPane fx:id="loadfom" layoutX="164.0" layoutY="50.0" prefHeight="500.0" prefWidth="666.0" />
    </children>
 </AnchorPane>
