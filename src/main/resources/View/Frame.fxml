@@ -12,17 +12,17 @@
 
 <AnchorPane prefHeight="475.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorderFram.Frame">
    <children>
-      <Pane prefHeight="50.0" prefWidth="830.0" style="-fx-background-color: #3742fa;">
+      <Pane prefHeight="50.0" prefWidth="854.0" style="-fx-background-color: #3742fa;">
          <children>
-            <Separator layoutX="576.0" layoutY="7.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="1.0" />
-            <Separator layoutX="444.0" layoutY="7.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="1.0" />
+            <Separator layoutX="614.0" layoutY="7.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="1.0" />
+            <Separator layoutX="470.0" layoutY="7.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="1.0" />
             <Separator layoutX="315.0" layoutY="7.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="1.0" />
-            <Label fx:id="lblDate" alignment="CENTER" contentDisplay="CENTER" layoutX="331.0" layoutY="17.0" prefHeight="17.0" prefWidth="98.0" text="2020-20-23" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="lblDate" alignment="CENTER" contentDisplay="CENTER" layoutX="343.0" layoutY="17.0" prefHeight="17.0" prefWidth="98.0" text="2020-20-23" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="lblTime" alignment="CENTER" contentDisplay="CENTER" layoutX="461.0" layoutY="17.0" prefHeight="17.0" prefWidth="98.0" text="12:45:03" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="lblTime" alignment="CENTER" contentDisplay="CENTER" layoutX="492.0" layoutY="17.0" prefHeight="17.0" prefWidth="98.0" text="12:45:03" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -36,7 +36,7 @@
       </Pane>
       <Pane layoutY="50.0" prefHeight="500.0" prefWidth="164.0" style="-fx-background-color: #ced6e0;">
          <children>
-            <JFXButton layoutX="22.0" layoutY="79.0" onAction="#btnDashboardOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Dashboard" textFill="#fcfcfc">
+            <JFXButton layoutX="22.0" layoutY="89.0" onAction="#btnDashboardOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Dashboard" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -44,7 +44,7 @@
                   <Insets top="5.0" />
                </opaqueInsets>
             </JFXButton>
-            <JFXButton layoutX="22.0" layoutY="373.0" onAction="#btnLogoutOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: red;" text="Logout" textFill="#fcfcfc">
+            <JFXButton layoutX="21.0" layoutY="434.0" onAction="#btnLogoutOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: red;" text="Logout" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -52,7 +52,7 @@
                   <Insets top="5.0" />
                </opaqueInsets>
             </JFXButton>
-            <JFXButton layoutX="21.0" layoutY="324.0" onAction="#btnOrderOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Orders" textFill="#fcfcfc">
+            <JFXButton layoutX="20.0" layoutY="379.0" onAction="#btnOrderOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Orders" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -60,7 +60,7 @@
                   <Insets top="5.0" />
                </opaqueInsets>
             </JFXButton>
-            <JFXButton layoutX="21.0" layoutY="275.0" onAction="#btnSupplierOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Supplier" textFill="#fcfcfc">
+            <JFXButton layoutX="20.0" layoutY="321.0" onAction="#btnSupplierOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Supplier" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -68,7 +68,7 @@
                   <Insets top="5.0" />
                </opaqueInsets>
             </JFXButton>
-            <JFXButton layoutX="22.0" layoutY="224.0" onAction="#btnProductOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Product" textFill="#fcfcfc">
+            <JFXButton layoutX="21.0" layoutY="262.0" onAction="#btnProductOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Product" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -76,7 +76,7 @@
                   <Insets top="5.0" />
                </opaqueInsets>
             </JFXButton>
-            <JFXButton layoutX="22.0" layoutY="174.0" onAction="#btnUserOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="User" textFill="#fcfcfc">
+            <JFXButton layoutX="21.0" layoutY="204.0" onAction="#btnUserOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="User" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -89,7 +89,7 @@
                   <Image url="@img.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="21.0" layoutY="126.0" onAction="#btnPlaceOrderOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Place Order" textFill="#fcfcfc">
+            <JFXButton layoutX="21.0" layoutY="145.0" onAction="#btnPlaceOrderOnAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #1289A7;" text="Place Order" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -99,6 +99,6 @@
             </JFXButton>
          </children>
       </Pane>
-      <AnchorPane fx:id="loadfom" layoutX="164.0" layoutY="50.0" prefHeight="500.0" prefWidth="666.0" />
+      <AnchorPane fx:id="loadfom" layoutX="164.0" layoutY="50.0" prefHeight="500.0" prefWidth="690.0" />
    </children>
 </AnchorPane>

@@ -25,7 +25,7 @@ public class Frame implements Initializable {
     public Label lblTime;
 
     public void loadDashboard() throws IOException {
-        URL url = this.getClass().getResource("View/Dashboard.fxml");
+        URL url = this.getClass().getResource("/View/Dashboard.fxml");
 
         assert url != null;
 
@@ -35,19 +35,37 @@ public class Frame implements Initializable {
     }
 
     public void btnOrderOnAction(ActionEvent actionEvent) throws IOException {
+        URL url = this.getClass().getResource("/View/Reports.fxml");
 
+        assert url != null;
+
+        Parent load = FXMLLoader.load(url);
+        this.loadfom.getChildren().clear();
+        this.loadfom.getChildren().add(load);
     }
 
-    public void btnSupplierOnAction(ActionEvent actionEvent) {
+    public void btnSupplierOnAction(ActionEvent actionEvent) throws IOException {
+        URL url = this.getClass().getResource("/View/Supplier.fxml");
 
+        assert url != null;
+
+        Parent load = FXMLLoader.load(url);
+        this.loadfom.getChildren().clear();
+        this.loadfom.getChildren().add(load);
     }
 
-    public void btnProductOnAction(ActionEvent actionEvent) {
+    public void btnProductOnAction(ActionEvent actionEvent) throws IOException {
+        URL url = this.getClass().getResource("/View/Product.fxml");
 
+        assert url != null;
+
+        Parent load = FXMLLoader.load(url);
+        this.loadfom.getChildren().clear();
+        this.loadfom.getChildren().add(load);
     }
 
     public void btnUserOnAction(ActionEvent actionEvent) throws IOException {
-        URL url = this.getClass().getResource("View/User.fxml");
+        URL url = this.getClass().getResource("/View/User.fxml");
 
         assert url != null;
 
@@ -106,7 +124,13 @@ public class Frame implements Initializable {
         timeline.play();
     }
 
-    public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
+    public void btnPlaceOrderOnAction(ActionEvent actionEvent) throws IOException {
+        URL url = this.getClass().getResource("/View/PlaceOrder.fxml");
 
+        assert url != null;
+
+        Parent load = FXMLLoader.load(url);
+        this.loadfom.getChildren().clear();
+        this.loadfom.getChildren().add(load);
     }
 }

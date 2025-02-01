@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Report.OrderReports">
    <children>
-      <TableView layoutX="18.0" layoutY="49.0" prefHeight="438.0" prefWidth="443.0" style="-fx-background-radius: 8;">
+      <TableView layoutX="18.0" layoutY="53.0" prefHeight="434.0" prefWidth="443.0" style="-fx-background-radius: 8;">
         <columns>
           <TableColumn prefWidth="63.20001220703125" text="Order ID" />
           <TableColumn prefWidth="64.79998779296875" text="User ID" />
@@ -37,33 +37,22 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="474.0" layoutY="55.0" text="Order ID">
+      <Label layoutX="474.0" layoutY="60.0" text="Order ID">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="533.0" layoutY="55.0" prefHeight="16.0" prefWidth="87.0" text="P000" textFill="#2e86de">
+      <Label layoutX="533.0" layoutY="59.0" prefHeight="16.0" prefWidth="87.0" text="P000" textFill="#2e86de">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>
       </Label>
-      <Label layoutX="475.0" layoutY="85.0" text="Cus ID">
+      <Label layoutX="474.0" layoutY="99.0" text="User ID">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="533.0" layoutY="85.0" prefHeight="16.0" prefWidth="87.0" text="C000" textFill="#2e86de">
-         <font>
-            <Font name="System Bold" size="11.0" />
-         </font>
-      </Label>
-      <Label layoutX="474.0" layoutY="114.0" text="Name">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Label>
-      <TextField layoutX="533.0" layoutY="110.0" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
-      <Label layoutX="475.0" layoutY="147.0" text="Product List">
+      <Label layoutX="475.0" layoutY="140.0" text="Product List">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
@@ -96,5 +85,10 @@
             <TextField layoutX="30.0" prefHeight="26.0" prefWidth="307.0" promptText="Search Product" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
          </children>
       </Pane>
+      <Label layoutX="533.0" layoutY="99.0" prefHeight="16.0" prefWidth="87.0" text="U000" textFill="#2e86de">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

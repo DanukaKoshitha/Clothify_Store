@@ -1,4 +1,4 @@
-package controller.Order;
+package controller.Report;
 
 public class OrderReports {
 

@@ -1,65 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.User.UserFormController">
+<AnchorPane prefHeight="500.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.User.UserFormController">
    <children>
-      <Label layoutX="15.0" layoutY="15.0" prefHeight="18.0" prefWidth="64.0" text="controller.User.User">
+      <Label layoutX="15.0" layoutY="15.0" prefHeight="18.0" prefWidth="64.0" text="User">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TableView layoutX="21.0" layoutY="162.0" prefHeight="218.0" prefWidth="558.0">
+      <TableView layoutX="14.0" layoutY="211.0" prefHeight="274.0" prefWidth="662.0" style="-fx-border-color: #3742fa;">
         <columns>
-          <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="colEmail" prefWidth="204.0" text="Email" />
-            <TableColumn fx:id="colPassword" prefWidth="168.0" text="Password" />
-            <TableColumn fx:id="colRole" prefWidth="111.199951171875" text="Role" />
+          <TableColumn fx:id="colID" prefWidth="63.19998550415039" text="      ID" />
+          <TableColumn fx:id="colName" prefWidth="144.800048828125" text="               Name" />
+            <TableColumn fx:id="colEmail" prefWidth="224.7999725341797" text="                                Email" />
+            <TableColumn fx:id="colPassword" prefWidth="134.39996337890625" text="             Password" />
+            <TableColumn fx:id="colRole" prefWidth="93.60003662109375" text="         Role" />
         </columns>
       </TableView>
-      <Pane fx:id="lblEmail" layoutX="21.0" layoutY="74.0" prefHeight="26.0" prefWidth="163.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 10;">
-         <effect>
-            <Glow />
-         </effect>
-      </Pane>
-      <Pane fx:id="lblSearch" layoutX="415.0" layoutY="74.0" prefHeight="26.0" prefWidth="163.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 10;">
-         <effect>
-            <Glow />
-         </effect>
-      </Pane>
-      <Pane fx:id="lblPassword" layoutX="207.0" layoutY="74.0" prefHeight="26.0" prefWidth="163.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 10;">
-         <effect>
-            <Glow />
-         </effect>
-      </Pane>
-      <Separator layoutX="388.0" layoutY="38.0" orientation="VERTICAL" prefHeight="106.0" prefWidth="8.0" />
-      <Label layoutX="27.0" layoutY="48.0" prefHeight="18.0" prefWidth="51.0" text="E-mail">
+      <Separator layoutX="435.0" layoutY="46.0" orientation="VERTICAL" prefHeight="146.0" prefWidth="7.0" />
+      <Label layoutX="21.0" layoutY="90.0" prefHeight="18.0" prefWidth="51.0" text="E-mail">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="212.0" layoutY="49.0" prefHeight="18.0" prefWidth="64.0" text="Password">
+      <Label layoutX="20.0" layoutY="126.0" prefHeight="18.0" prefWidth="64.0" text="Password">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="420.0" layoutY="49.0" prefHeight="18.0" prefWidth="79.0" text="Search controller.User.User">
+      <Label layoutX="471.0" layoutY="49.0" prefHeight="18.0" prefWidth="163.0" text="Search User">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <JFXButton layoutX="427.0" layoutY="119.0" onAction="#btnSearchOnAction" prefWidth="64.0" style="-fx-background-radius: 10;" text="Search" />
-      <JFXButton layoutX="501.0" layoutY="119.0" onAction="#btnCancelOnAction" prefWidth="64.0" style="-fx-background-radius: 10; -fx-background-color: #e1b12c;" text="Cancel" />
-      <JFXButton layoutX="86.0" layoutY="119.0" onAction="#btnRegisterOnAction" prefWidth="64.0" style="-fx-background-radius: 10; -fx-background-color: #55E6C1;" text="Register">
+      <JFXButton layoutX="472.0" layoutY="119.0" onAction="#btnSearchOnAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-radius: 10; -fx-background-color: #3498db;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="572.0" layoutY="119.0" onAction="#btnCancelOnAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-radius: 10; -fx-background-color: #747d8c;" text="Cancel" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="328.0" layoutY="52.0" onAction="#btnRegisterOnAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-radius: 10; -fx-background-color: #55E6C1;" text="Register" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="164.0" layoutY="119.0" onAction="#btnUpdateOnAction" prefWidth="64.0" style="-fx-background-radius: 10; -fx-background-color: #D6A2E8;" text="Modify" />
-      <JFXButton layoutX="244.0" layoutY="119.0" onAction="#btnDeleteOnAction" prefWidth="64.0" style="-fx-background-radius: 10; -fx-background-color: #eb2f06;" text="Remove" />
+      <JFXButton layoutX="328.0" layoutY="148.0" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-radius: 10; -fx-background-color: #eb2f06;" text="Remove" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <Label layoutX="21.0" layoutY="58.0" prefHeight="18.0" prefWidth="51.0" text="Name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="329.0" layoutY="100.0" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-radius: 10; -fx-background-color: #D6A2E8;" text="Modify" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <JFXComboBox fx:id="comboBox" layoutX="98.0" layoutY="159.0" onAction="#comboboxOnAction" prefHeight="29.0" prefWidth="179.0" promptText="Select Role" />
+      <Label layoutX="21.0" layoutY="164.0" prefHeight="18.0" prefWidth="64.0" text="Role">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtName" layoutX="98.0" layoutY="54.0" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+      <TextField fx:id="txtSearchUser" layoutX="471.0" layoutY="76.0" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+      <TextField fx:id="txtPassword" layoutX="98.0" layoutY="121.0" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+      <TextField fx:id="txtEmail" layoutX="98.0" layoutY="87.0" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
    </children>
 </AnchorPane>
