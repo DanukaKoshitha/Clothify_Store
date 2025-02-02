@@ -1,15 +1,15 @@
-package DBCollection;
+package DBConnection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class dbCollection {
-    private static dbCollection instance;
+public class dbConnection {
+    private static dbConnection instance;
 
     private Connection connection;
 
-    private dbCollection(){
+    private dbConnection(){
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Clothify","root","1234");
         } catch (SQLException e) {
@@ -17,11 +17,11 @@ public class dbCollection {
         }
     }
 
-    public  static dbCollection getInstance(){
-        return instance == null ? instance = new dbCollection() : instance;
+    public  static dbConnection getInstance(){
+        return instance == null ? instance = new dbConnection() : instance;
     }
 
-    public Connection getCollection(){
+    public Connection getConnection(){
         return connection;
     }
 }
