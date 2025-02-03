@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
@@ -35,6 +36,7 @@ public class UserFormController implements Initializable {
     public TextField txtName;
     public TextField txtPassword;
     public TextField txtEmail;
+    public TableView table;
 
     UserService service = ServiceFactory.getInstance().getServiceType(ServiceType.USER);
 
@@ -61,7 +63,9 @@ public class UserFormController implements Initializable {
             txtEmail.setText("");
             txtPassword.setText("");
 
-            service.loadTable();
+            /////////////////  update table   ///////////////
+
+            table.setItems(service.loadTabel());
 
         }else {
             new Alert(Alert.AlertType.ERROR,"Not Added Try Again !").show();
@@ -72,22 +76,33 @@ public class UserFormController implements Initializable {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
-    }
+        if (service.delete(txtSearchUser.getText())){
+            new Alert(Alert.AlertType.CONFIRMATION,"Deleted !").show();
 
-    public void comboboxOnAction(ActionEvent actionEvent) {
+            ///////// update tabel //////////
+
+            table.setItems(service.loadTabel());
+
+        }else {
+            new Alert(Alert.AlertType.ERROR,"Try Again !").show();
+        }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        colID.setCellValueFactory(new PropertyValueFactory<>("userID"));
-        colName.setCellValueFactory(new PropertyValueFactory<>("Name"));
-        colEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
-        colPassword.setCellValueFactory(new PropertyValueFactory<>("Password"));
-        colRole.setCellValueFactory(new PropertyValueFactory<>("Role"));
+        colID.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colPassword.setCellValueFactory(new PropertyValueFactory<>("password"));
+        colRole.setCellValueFactory(new PropertyValueFactory<>("role"));
 
         comboBox.setItems(FXCollections.observableArrayList(new ArrayList<String>(Arrays.asList("Admin","Employee"))));
 
-        service.loadTable();
+        table.setItems(service.loadTabel());
+
+    }
+
+    public void comboboxOnAction(ActionEvent actionEvent) {
     }
 }

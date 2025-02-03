@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.User.UserFormController">
+<AnchorPane prefHeight="500.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.User.UserFormController">
    <children>
       <Label layoutX="15.0" layoutY="15.0" prefHeight="18.0" prefWidth="64.0" text="User">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TableView layoutX="14.0" layoutY="211.0" prefHeight="274.0" prefWidth="662.0" style="-fx-border-color: #3742fa;">
+      <TableView fx:id="table" layoutX="14.0" layoutY="211.0" prefHeight="274.0" prefWidth="662.0" style="-fx-border-color: #3742fa;">
         <columns>
           <TableColumn fx:id="colID" prefWidth="63.19998550415039" text="      ID" />
           <TableColumn fx:id="colName" prefWidth="144.800048828125" text="               Name" />

@@ -4,11 +4,10 @@ import DBConnection.dbConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.User;
+import model.UserData;
 import services.Coustom.UserService;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
@@ -40,18 +39,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<Object> loadTable() {
+    public ObservableList<UserData> loadTabel() {
         try {
             Connection connection = dbConnection.getInstance().getConnection();
             Statement stm = connection.createStatement();
-            ResultSet rst = stm.executeQuery("SELECT * FROM User");
+            ResultSet rst = stm.executeQuery("SELECT * FROM user");
 
-            ArrayList<Object> userArrayList = new ArrayList<>();
+            ObservableList<UserData> observableList = FXCollections.observableArrayList();
 
             while (rst.next()){
-                userArrayList.add(
-                        rst.getInt(1),
-                        new User(
+                observableList.add(
+                        new UserData(
+                                rst.getInt(1),
                                 rst.getString(2),
                                 rst.getString(3),
                                 rst.getString(4),
@@ -60,16 +59,26 @@ public class UserServiceImpl implements UserService {
                 );
             }
 
-            ObservableList<Object> observableList = FXCollections.observableArrayList();
-
-            userArrayList.forEach(Users -> {
-                observableList.add(Users);
-            });
-
             return observableList;
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public boolean delete(String id) {
+        try {
+            Connection connection = dbConnection.getInstance().getConnection();
+            PreparedStatement pst = connection.prepareStatement("Delete from user where userID=?");
+            pst.setString(1,id);
+
+            return pst.executeUpdate()>0;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
+
