@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean register(User user) {
+    public boolean register(User user){
         try {
             Connection connection = dbConnection.getInstance().getConnection();
             PreparedStatement pst = connection.prepareStatement("INSERT INTO User (Name,Email,Password,Role) values (?,?,?,?)");
@@ -78,6 +78,52 @@ public class UserServiceImpl implements UserService {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public boolean update(UserData user) {
+        try {
+            Connection connection = dbConnection.getInstance().getConnection();
+            PreparedStatement pst = connection.prepareStatement("UPDATE User SET name=?,email=?,password=?,role=? where userID=?");
+
+            pst.setString(1,user.getName());
+            pst.setString(2,user.getEmail());
+            pst.setString(3,user.getPassword());
+            pst.setString(4,user.getRole());
+            pst.setString(5, String.valueOf(user.getId()));
+
+            return pst.executeUpdate()>0;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public User searchUser(String id) {
+        try {
+            Connection connection = dbConnection.getInstance().getConnection();
+            PreparedStatement pst = connection.prepareStatement("SELECT * FROM User WHERE userID=?");
+            pst.setString(1,id);
+            ResultSet rst = pst.executeQuery();
+
+            User searchUser = null;
+
+            while (rst.next()){
+                searchUser = new User(
+                        rst.getString(2),
+                        rst.getString(3),
+                        rst.getString(4),
+                        rst.getString(5)
+                );
+            }
+
+            return searchUser;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
 }

@@ -14,11 +14,11 @@
       </Label>
       <TableView fx:id="table" layoutX="14.0" layoutY="211.0" prefHeight="274.0" prefWidth="662.0" style="-fx-border-color: #3742fa;">
         <columns>
-          <TableColumn fx:id="colID" prefWidth="63.19998550415039" text="      ID" />
-          <TableColumn fx:id="colName" prefWidth="144.800048828125" text="               Name" />
-            <TableColumn fx:id="colEmail" prefWidth="224.7999725341797" text="                                Email" />
-            <TableColumn fx:id="colPassword" prefWidth="134.39996337890625" text="             Password" />
-            <TableColumn fx:id="colRole" prefWidth="93.60003662109375" text="         Role" />
+          <TableColumn fx:id="colID" prefWidth="63.19998550415039" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="144.800048828125" text="Name" />
+            <TableColumn fx:id="colEmail" prefWidth="224.7999725341797" text="Email" />
+            <TableColumn fx:id="colPassword" prefWidth="134.39996337890625" text="Password" />
+            <TableColumn fx:id="colRole" prefWidth="93.60003662109375" text="Role" />
         </columns>
       </TableView>
       <Separator layoutX="435.0" layoutY="46.0" orientation="VERTICAL" prefHeight="146.0" prefWidth="7.0" />
@@ -45,12 +45,12 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
-      <JFXButton layoutX="328.0" layoutY="52.0" onAction="#btnRegisterOnAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-radius: 10; -fx-background-color: #55E6C1;" text="Register" textFill="WHITE">
+      <JFXButton layoutX="322.0" layoutY="52.0" onAction="#btnRegisterOnAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-radius: 10; -fx-background-color: #55E6C1;" text="Register" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="328.0" layoutY="148.0" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-radius: 10; -fx-background-color: #eb2f06;" text="Remove" textFill="WHITE">
+      <JFXButton layoutX="322.0" layoutY="148.0" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-radius: 10; -fx-background-color: #eb2f06;" text="Remove" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
@@ -59,18 +59,18 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <JFXButton layoutX="329.0" layoutY="100.0" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-radius: 10; -fx-background-color: #D6A2E8;" text="Modify" textFill="WHITE">
+      <JFXButton layoutX="323.0" layoutY="100.0" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-radius: 10; -fx-background-color: #D6A2E8;" text="Modify" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
-      <JFXComboBox fx:id="comboBox" layoutX="98.0" layoutY="159.0" onAction="#comboboxOnAction" prefHeight="29.0" prefWidth="179.0" promptText="Select Role" />
+      <JFXComboBox fx:id="comboBox" layoutX="98.0" layoutY="159.0" prefHeight="29.0" prefWidth="179.0" promptText="Select Role" />
       <Label layoutX="21.0" layoutY="164.0" prefHeight="18.0" prefWidth="64.0" text="Role">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
       <TextField fx:id="txtName" layoutX="98.0" layoutY="54.0" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
-      <TextField fx:id="txtSearchUser" layoutX="471.0" layoutY="76.0" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+      <TextField fx:id="txtSearchUser" layoutX="471.0" layoutY="76.0" prefHeight="26.0" prefWidth="170.0" promptText="Enter User ID" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
       <TextField fx:id="txtPassword" layoutX="98.0" layoutY="121.0" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
       <TextField fx:id="txtEmail" layoutX="98.0" layoutY="87.0" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
    </children>

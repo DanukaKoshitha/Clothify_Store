@@ -1,6 +1,7 @@
 package services;
 
 import Util.ServiceType;
+import services.Coustom.Impl.SupplierServiceImpl;
 import services.Coustom.Impl.UserServiceImpl;
 
 public class ServiceFactory {
@@ -16,6 +17,9 @@ public class ServiceFactory {
         switch (serviceType){
             case USER -> {
                 return (T) UserServiceImpl.getInstance();
+            }
+            case SUPPLIER -> {
+                return (T) SupplierServiceImpl.getInstance();
             }
         }
         return null;

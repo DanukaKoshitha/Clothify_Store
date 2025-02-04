@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import model.User;
+import model.UserData;
 import services.Coustom.UserService;
 import services.ServiceFactory;
 
@@ -41,10 +42,15 @@ public class UserFormController implements Initializable {
     UserService service = ServiceFactory.getInstance().getServiceType(ServiceType.USER);
 
     public void btnSearchOnAction(ActionEvent actionEvent) {
+        User FindUseer = service.searchUser(txtSearchUser.getText());
+
+        txtName.setText(FindUseer.getName());
+        txtEmail.setText(FindUseer.getEmail());
+        txtPassword.setText(FindUseer.getPassword());
     }
 
     public void btnCancelOnAction(ActionEvent actionEvent) {
-
+        txtSearchUser.setText("");
     }
 
     public void btnRegisterOnAction(ActionEvent actionEvent) {
@@ -59,9 +65,9 @@ public class UserFormController implements Initializable {
         ){
             new Alert(Alert.AlertType.CONFIRMATION,"Added Successful !").show();
 
-            txtName.setText("");
-            txtEmail.setText("");
-            txtPassword.setText("");
+            /////////////////  clear text    ///////////////
+
+            clearTextField();
 
             /////////////////  update table   ///////////////
 
@@ -73,6 +79,26 @@ public class UserFormController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+        if (service.update(new UserData(
+                Integer.parseInt(txtSearchUser.getText()),
+                txtName.getText(),
+                txtEmail.getText(),
+                txtPassword.getText(),
+                comboBox.getSelectionModel().getSelectedItem().toString()
+        ))){
+            new Alert(Alert.AlertType.CONFIRMATION,"Updated !").show();
+
+            ////////// update tabel  //////////
+
+            table.setItems(service.loadTabel());
+
+            /////////  clear text  /////////
+
+            clearTextField();
+
+        }else {
+            new Alert(Alert.AlertType.ERROR,"Try Again !");
+        }
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
@@ -82,6 +108,10 @@ public class UserFormController implements Initializable {
             ///////// update tabel //////////
 
             table.setItems(service.loadTabel());
+
+            /////////   clear text  /////////
+
+            clearTextField();
 
         }else {
             new Alert(Alert.AlertType.ERROR,"Try Again !").show();
@@ -103,6 +133,10 @@ public class UserFormController implements Initializable {
 
     }
 
-    public void comboboxOnAction(ActionEvent actionEvent) {
+    public void clearTextField(){
+        txtSearchUser.setText("");
+        txtName.setText("");
+        txtEmail.setText("");
+        txtPassword.setText("");
     }
 }

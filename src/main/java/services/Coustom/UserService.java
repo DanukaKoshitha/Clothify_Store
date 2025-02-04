@@ -13,4 +13,8 @@ public interface UserService extends SuperServices {
     ObservableList<UserData> loadTabel();
 
     boolean delete(String id);
+
+    boolean update(UserData user);
+
+    User searchUser(String id);
 }
