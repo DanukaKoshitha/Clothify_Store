@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Supplier.SupplierFormController">
+<AnchorPane prefHeight="500.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Supplier.SupplierFormController">
    <children>
       <TreeView layoutX="460.0" layoutY="52.0" prefHeight="433.0" prefWidth="215.0" style="-fx-border-color: blue;" />
       <Label layoutX="470.0" layoutY="62.0" text="Supplier Details">
@@ -48,7 +53,7 @@
       </Label>
       <Pane layoutX="313.0" layoutY="13.0" prefHeight="26.0" prefWidth="361.0" style="-fx-background-color: #ecf0f1; -fx-background-radius: 50;">
          <children>
-            <TextField fx:id="txtSearchSupplier" layoutX="31.0" prefHeight="26.0" prefWidth="333.0" promptText="Search Product" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+            <TextField fx:id="txtSearchSupplier" layoutX="31.0" onKeyReleased="#OnKeyReleased" prefHeight="26.0" prefWidth="333.0" promptText="Search Product" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
          </children>
       </Pane>
       <TableView fx:id="table" layoutX="14.0" layoutY="51.0" prefHeight="434.0" prefWidth="439.0">
@@ -78,7 +83,7 @@
          </font>
       </Label>
       <TextField fx:id="txtItem" layoutX="543.0" layoutY="303.0" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
-      <Label layoutX="655.0" layoutY="60.0" onDragDetected="#btnNewOnAction" prefHeight="18.0" prefWidth="14.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text=" +" textFill="WHITE">
+      <Label layoutX="606.0" layoutY="60.0" onDragDetected="#btnNewOnAction" prefHeight="26.0" prefWidth="63.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="      New" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

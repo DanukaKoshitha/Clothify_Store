@@ -25,7 +25,7 @@ public class SupplierServiceImpl implements SupplierService{
             Connection connection = dbConnection.getInstance().getConnection();
             PreparedStatement pst = connection.prepareStatement("INSERT INTO Supplier values(?,?,?,?,?)");
 
-            pst.setString(1,(supplier.getId()));
+            pst.setString(1,supplier.getId());
             pst.setString(2,supplier.getName());
             pst.setString(3,supplier.getEmail());
             pst.setString(4,supplier.getCompany());
@@ -43,22 +43,25 @@ public class SupplierServiceImpl implements SupplierService{
         try {
             Connection connection = dbConnection.getInstance().getConnection();
             Statement stm = connection.createStatement();
-            ResultSet rst = stm.executeQuery("SELECT * FROM Supplier");
+            ResultSet rst = stm.executeQuery("SELECT SupplierID FROM Supplier");
 
-            if (rst.next()){
-                String substring = (rst.getString(1)).substring(1);
-                int number = Integer.parseInt(substring) + 1 ;
-                String incrementID = String.format("%03d",number);
+           String lastID = "S000";
 
-                return "S" + incrementID;
+           while (rst.next()){
+               String currentID = rst.getString(1);
+               if(currentID.compareTo(lastID) > 0){
+                   lastID=currentID;
+               }
+           }
+            String substring = lastID.substring(1);
+            int number = Integer.parseInt(substring) +1;
+            String incrementID = String.format("%03d",number);
 
-            }else {
-                return "S001";
-            }
+            return "S"+ incrementID;
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @Override
@@ -85,5 +88,64 @@ public class SupplierServiceImpl implements SupplierService{
             throw new RuntimeException(e);
         }
 
+    }
+
+    @Override
+    public boolean deleteSupplier(String id) {
+        try {
+            Connection connection = dbConnection.getInstance().getConnection();
+            PreparedStatement pst = connection.prepareStatement("DELETE FROM Supplier WHERE SupplierID=?");
+            pst.setString(1,id);
+
+            return pst.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public Supplier searchSupplier(String itemName) {
+        try {
+            Connection connection = dbConnection.getInstance().getConnection();
+            PreparedStatement pst = connection.prepareStatement("SELECT * FROM Supplier WHERE Item=?");
+            pst.setString(1,itemName);
+            ResultSet rst = pst.executeQuery();
+
+            Supplier supplier = null;
+
+            while (rst.next()){
+                supplier = new Supplier(
+                        rst.getString(1),
+                        rst.getString(2),
+                        rst.getString(3),
+                        rst.getString(4),
+                        rst.getString(5)
+                );
+            }
+            return supplier;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public boolean update(Supplier supplier) {
+        try {
+            Connection connection = dbConnection.getInstance().getConnection();
+            PreparedStatement pst = connection.prepareStatement("UPDATE Supplier SET name=?,email=?,company=?,Item=? where supplierID=?");
+
+            pst.setString(1,supplier.getName());
+            pst.setString(2,supplier.getEmail());
+            pst.setString(3,supplier.getCompany());
+            pst.setString(4,supplier.getItem());
+            pst.setString(5,supplier.getId());
+
+            return pst.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

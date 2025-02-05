@@ -12,4 +12,10 @@ public interface SupplierService extends SuperServices {
     String setSupplierID();
 
     ObservableList<Supplier> loadTabel();
+
+    boolean deleteSupplier(String id);
+
+    Supplier searchSupplier(String name);
+
+    boolean update(Supplier supplier);
 }
