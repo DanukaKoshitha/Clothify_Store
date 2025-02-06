@@ -1,10 +1,15 @@
-package controller;
+package controller.LoginForm;
 
 import DBConnection.dbConnection;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,10 +29,19 @@ public class LoginFormContrller {
 
             ResultSet rst = pst.executeQuery();
 
-            while (rst.next()){
+            if (rst.next()){
+                Stage stage = (Stage) txtEmail.getScene().getWindow();
 
+                Scene newScene = new Scene(FXMLLoader.load(getClass().getResource("/View/Frame.fxml")));
+                stage.setTitle("Clothify Store");
+                stage.setScene(newScene);
+
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Invalid Password and Email !").show();
             }
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 

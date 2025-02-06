@@ -2,7 +2,6 @@ package controller.User;
 
 import Util.ServiceType;
 import com.jfoenix.controls.JFXComboBox;
-import com.sun.jdi.connect.spi.Connection;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -12,15 +11,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
-import model.User;
-import model.UserData;
+import DTO.User;
+import DTO.UserData;
 import services.Coustom.UserService;
 import services.ServiceFactory;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class UserFormController implements Initializable {
@@ -47,6 +45,11 @@ public class UserFormController implements Initializable {
         txtName.setText(FindUseer.getName());
         txtEmail.setText(FindUseer.getEmail());
         txtPassword.setText(FindUseer.getPassword());
+        if (comboBox.getItems().contains(FindUseer.getRole())) {
+            comboBox.setValue(FindUseer.getRole());
+        } else {
+            System.out.println("Role not found in ComboBox items!");
+        }
     }
 
     public void btnCancelOnAction(ActionEvent actionEvent) {
@@ -127,7 +130,7 @@ public class UserFormController implements Initializable {
         colPassword.setCellValueFactory(new PropertyValueFactory<>("password"));
         colRole.setCellValueFactory(new PropertyValueFactory<>("role"));
 
-        comboBox.setItems(FXCollections.observableArrayList(new ArrayList<String>(Arrays.asList("Admin","Employee"))));
+        comboBox.setItems(FXCollections.observableArrayList(new ArrayList<>(Arrays.asList("Admin","Employee"))));
 
         table.setItems(service.loadTabel());
 

@@ -1,11 +1,9 @@
 package services.Coustom;
 
 import javafx.collections.ObservableList;
-import model.User;
-import model.UserData;
+import DTO.User;
+import DTO.UserData;
 import services.SuperServices;
-
-import java.util.List;
 
 public interface UserService extends SuperServices {
     boolean register(User user);

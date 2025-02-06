@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="501.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainDashboard.Dashboard">
+<AnchorPane prefHeight="501.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainDashboard.Dashboard">
    <children>
       <Label alignment="CENTER" layoutX="177.0" layoutY="25.0" prefHeight="18.0" prefWidth="362.0" text="Hi, Welcome back !">
          <font>

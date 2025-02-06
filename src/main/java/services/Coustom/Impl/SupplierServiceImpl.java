@@ -1,14 +1,12 @@
 package services.Coustom.Impl;
 import DBConnection.dbConnection;
 
-import com.mysql.cj.jdbc.JdbcConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.Supplier;
+import DTO.Supplier;
 import services.Coustom.SupplierService;
 
 import java.sql.*;
-import java.util.List;
 
 public class SupplierServiceImpl implements SupplierService{
     private static SupplierServiceImpl instance;
@@ -105,11 +103,11 @@ public class SupplierServiceImpl implements SupplierService{
     }
 
     @Override
-    public Supplier searchSupplier(String itemName) {
+    public Supplier searchSupplier(String Name) {
         try {
             Connection connection = dbConnection.getInstance().getConnection();
-            PreparedStatement pst = connection.prepareStatement("SELECT * FROM Supplier WHERE Item=?");
-            pst.setString(1,itemName);
+            PreparedStatement pst = connection.prepareStatement("SELECT * FROM Supplier WHERE Name=?");
+            pst.setString(1,Name);
             ResultSet rst = pst.executeQuery();
 
             Supplier supplier = null;

@@ -3,8 +3,8 @@ package services.Coustom.Impl;
 import DBConnection.dbConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.User;
-import model.UserData;
+import DTO.User;
+import DTO.UserData;
 import services.Coustom.UserService;
 
 import java.sql.*;

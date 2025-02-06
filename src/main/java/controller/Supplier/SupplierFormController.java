@@ -5,10 +5,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import model.Supplier;
+import DTO.Supplier;
 import services.Coustom.SupplierService;
 import services.ServiceFactory;
 
