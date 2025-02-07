@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainForm" prefHeight="500.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Product.ProductFormController">
+<AnchorPane fx:id="mainForm" prefHeight="500.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Product.ProductFormController">
    <children>
       <Label layoutX="15.0" layoutY="15.0" text="Product">
          <font>
@@ -15,7 +22,7 @@
       </Label>
       <Pane layoutX="318.0" layoutY="12.0" prefHeight="26.0" prefWidth="361.0" style="-fx-background-color: #ecf0f1; -fx-background-radius: 50;">
          <children>
-            <TextField fx:id="txtSearch" layoutX="30.0" prefHeight="26.0" prefWidth="333.0" promptText="Search Product" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+            <TextField fx:id="txtSearch" layoutX="30.0" onKeyReleased="#SearchOnKeyReleased" prefHeight="26.0" prefWidth="333.0" promptText="Search Product" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
          </children>
       </Pane>
       <TreeView fx:id="ProductView" layoutX="13.0" layoutY="49.0" prefHeight="438.0" prefWidth="442.0" style="-fx-border-color: blue;" />
@@ -30,7 +37,10 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ImageView fx:id="Picture" fitHeight="113.0" fitWidth="142.0" layoutX="500.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Picture" fitHeight="113.0" fitWidth="131.0" layoutX="515.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Default_image.png" />
+         </image></ImageView>
       <Label layoutX="474.0" layoutY="210.0" text="ID">
          <font>
             <Font name="System Bold Italic" size="12.0" />
@@ -89,5 +99,10 @@
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
       <JFXButton layoutX="526.0" layoutY="411.0" onAction="#btnImportImageOnAction" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" text="Set Image" />
+      <ScrollPane layoutX="13.0" layoutY="49.0" prefHeight="438.0" prefWidth="442.0">
+         <content>
+            <VBox fx:id="ScrollBox" prefHeight="435.0" prefWidth="440.0" />
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

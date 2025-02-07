@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="475.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorderFram.Frame">
+<AnchorPane prefHeight="475.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorderFram.Frame">
    <children>
       <Pane prefHeight="50.0" prefWidth="854.0" style="-fx-background-color: #3742fa;">
          <children>
