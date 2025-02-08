@@ -1,4 +1,156 @@
 package controller.PlaceOrder;
 
-public class PlaceOrderFromController {
+import DTO.Product;
+import DTO.ProductOrder;
+import Util.ServiceType;
+import controller.BorderFram.Frame;
+import controller.LoginForm.UserSession;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import services.Coustom.PlaceOrderService;
+import services.ServiceFactory;
+
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
+
+public class PlaceOrderFromController implements Initializable {
+
+    PlaceOrderService service = ServiceFactory.getInstance().getServiceType(ServiceType.PLACEORDER);
+
+    public Label lblOrderID;
+    public TextField lblTotal;
+    public TableView table;
+    public TableColumn colProduct;
+    public TableColumn colQTY;
+    public TextField txtSearch;
+    public VBox ScrollVBox;
+    private ObservableList<ProductOrder> orderList = FXCollections.observableArrayList();
+
+
+    public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
+        Frame frame = new Frame();
+        String dateText = frame.lblDate.getText();
+        String timeText = frame.lblTime.getText();
+        String userName = UserSession.getInstance().getUserName();
+
+
+    }
+
+    public void btnGentsOnAction(ActionEvent actionEvent) {
+       showProducts("Gents");
+    }
+
+    public void btnLadiesOnAction(ActionEvent actionEvent) {
+        showProducts("Ladies");
+    }
+
+    public void btnKidsOnAction(ActionEvent actionEvent) {
+        showProducts("Kids");
+    }
+
+    public void showProducts(String name){
+        List<Product> ProductList = service.GentsProductList(name);
+        ScrollVBox.getChildren().clear();
+
+        GridPane gridPane = new GridPane();
+        gridPane.setHgap(20);
+        gridPane.setVgap(20);
+
+        int column = 0;
+        int row = 0;
+
+        for (Product product : ProductList){
+            VBox productCard = createProductCard(product);
+            gridPane.add(productCard,column,row);
+
+            column++;
+            if (column == 3) {
+                column = 0;
+                row++;
+            }
+        }
+        ScrollVBox.getChildren().add(gridPane);
+    }
+
+    public VBox createProductCard(Product product) {
+        VBox vbox = new VBox(10);
+        vbox.setAlignment(Pos.CENTER);
+        vbox.setStyle("-fx-padding: 10px; -fx-border-color: lightgray; -fx-border-width: 1; -fx-background-radius: 5;");
+
+        // Product Image
+        ImageView imageView = new ImageView();
+        imageView.setFitWidth(100);
+        imageView.setFitHeight(100);
+
+        if (product.getImage() != null && !product.getImage().isEmpty()) {
+            imageView.setImage(new Image("file:" + product.getImage())); // Load local image
+        } else {
+            imageView.setImage(new Image(getClass().getResource("/assets/default.png").toExternalForm())); // Default image
+        }
+
+        // Separator Line
+        Separator separator = new Separator();
+        separator.setPrefWidth(100);
+
+        // Product Details (Name and Price)
+        Label nameLabel = new Label(product.getName());
+        nameLabel.setStyle("-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-alignment: center;");
+
+        Label priceLabel = new Label("Price: " + product.getPrice());
+        priceLabel.setStyle("-fx-font-size: 12px; -fx-text-alignment: center;");
+
+        VBox detailsBox = new VBox(5, nameLabel, priceLabel);
+        detailsBox.setAlignment(Pos.CENTER);
+
+        // Quantity Selection (Spinner)
+        Label qtyLabel = new Label("QTY: " + product.getQty());
+        qtyLabel.setStyle("-fx-font-size: 12px; -fx-font-weight: bold;");
+
+        // ✅ Declare `qtySpinner` before using it in the lambda expression
+        Spinner<Integer> qtySpinner = new Spinner<>();
+        qtySpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, product.getQty(), 1));
+        qtySpinner.setPrefWidth(60);
+
+        HBox qtyBox = new HBox(5, qtyLabel, qtySpinner);
+        qtyBox.setAlignment(Pos.CENTER);
+
+        // ✅ Now `qtySpinner` is accessible inside the lambda
+        imageView.setOnMouseClicked(event -> {
+            int selectedQty = qtySpinner.getValue();  // ✅ Now `qtySpinner` is accessible
+            addToTable(product.getName(), selectedQty);
+        });
+
+        // Add elements to VBox
+        vbox.getChildren().addAll(imageView, separator, detailsBox, qtyBox);
+        return vbox;
+    }
+
+
+    private void addToTable(String productName, int quantity) {
+        ProductOrder newOrder = new ProductOrder(productName, quantity);
+        orderList.add(newOrder);
+        table.setItems(orderList);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        colProduct.setCellValueFactory(new PropertyValueFactory<>("productName"));
+        colQTY.setCellValueFactory(new PropertyValueFactory<>("qty"));
+        table.setItems(orderList);
+        showProducts("Gents");
+
+        ////////////  set order id   ////////////
+        lblOrderID.setText(service.setOrderID());
+    }
 }

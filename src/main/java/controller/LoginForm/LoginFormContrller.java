@@ -30,6 +30,10 @@ public class LoginFormContrller {
             ResultSet rst = pst.executeQuery();
 
             if (rst.next()){
+
+                String username = rst.getString("Name");
+                UserSession.getInstance().setUserName(username);
+
                 Stage stage = (Stage) txtEmail.getScene().getWindow();
 
                 Scene newScene = new Scene(FXMLLoader.load(getClass().getResource("/View/Frame.fxml")));
@@ -46,6 +50,8 @@ public class LoginFormContrller {
         }
 
     }
+
+
 
     public void FogetPasswordOnAction(ActionEvent actionEvent) {
 

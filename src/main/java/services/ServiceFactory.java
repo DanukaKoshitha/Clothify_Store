@@ -1,6 +1,7 @@
 package services;
 
 import Util.ServiceType;
+import services.Coustom.Impl.PlaceOrderServiceImpl;
 import services.Coustom.Impl.ProductServiceImpl;
 import services.Coustom.Impl.SupplierServiceImpl;
 import services.Coustom.Impl.UserServiceImpl;
@@ -24,6 +25,8 @@ public class ServiceFactory {
             }
             case PRODUCT -> {
                 return (T) ProductServiceImpl.getInstance();
+            }case PLACEORDER -> {
+                return (T) PlaceOrderServiceImpl.getInstance();
             }
         }
         return null;

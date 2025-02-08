@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="475.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorderFram.Frame">
+<AnchorPane prefHeight="475.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorderFram.Frame">
    <children>
       <Pane prefHeight="50.0" prefWidth="854.0" style="-fx-background-color: #3742fa;">
          <children>
@@ -28,6 +25,11 @@
                </font>
             </Label>
             <Label alignment="CENTER" layoutX="98.0" layoutY="12.0" prefHeight="28.0" prefWidth="142.0" text="Clothify Store" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="UserName" alignment="CENTER" layoutX="638.0" layoutY="11.0" prefHeight="28.0" prefWidth="142.0" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>

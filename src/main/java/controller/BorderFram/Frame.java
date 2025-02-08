@@ -1,5 +1,6 @@
 package controller.BorderFram;
 
+import controller.LoginForm.UserSession;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -23,6 +24,7 @@ public class Frame implements Initializable {
     public AnchorPane loadfom;
     public Label lblDate;
     public Label lblTime;
+    public Label UserName;
 
     public void loadDashboard() throws IOException {
         URL url = this.getClass().getResource("/View/Dashboard.fxml");
@@ -100,6 +102,10 @@ public class Frame implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        /////////////   set the userName    //////////////
+        String getLoginUserName = UserSession.getInstance().getUserName();
+        UserName.setText(getLoginUserName);
     }
 
     public String getDate(){

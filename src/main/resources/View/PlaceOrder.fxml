@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TreeView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrder.PlaceOrderFromController">
+<AnchorPane prefHeight="500.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrder.PlaceOrderFromController">
    <children>
       <Label layoutX="15.0" layoutY="10.0" prefHeight="18.0" prefWidth="121.0" text="Place Order">
          <font>
@@ -29,12 +24,12 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="530.0" layoutY="88.0" prefHeight="16.0" prefWidth="87.0" text="P000" textFill="#2e86de">
+      <Label fx:id="lblOrderID" layoutX="530.0" layoutY="88.0" prefHeight="16.0" prefWidth="87.0" text="P000" textFill="#2e86de">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>
       </Label>
-      <JFXButton layoutX="483.0" layoutY="449.0" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #3742fa;" text="Place Order" textFill="WHITE">
+      <JFXButton layoutX="483.0" layoutY="449.0" onAction="#btnPlaceOrderOnAction" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #3742fa;" text="Place Order" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -44,32 +39,37 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="529.0" layoutY="401.0" prefHeight="26.0" prefWidth="138.0" promptText="LKR 0.00" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
-      <TableView layoutX="470.0" layoutY="113.0" prefHeight="275.0" prefWidth="200.0">
+      <TextField fx:id="lblTotal" layoutX="529.0" layoutY="401.0" prefHeight="26.0" prefWidth="138.0" promptText="LKR 0.00" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+      <TableView fx:id="table" layoutX="470.0" layoutY="113.0" prefHeight="275.0" prefWidth="200.0">
          <columns>
-            <TableColumn prefWidth="135.9998779296875" text="Product" />
-            <TableColumn prefWidth="64.0001220703125" text="QTY" />
+            <TableColumn fx:id="colProduct" prefWidth="135.9998779296875" text="Product" />
+            <TableColumn fx:id="colQTY" prefWidth="64.0001220703125" text="QTY" />
          </columns>
       </TableView>
       <Pane layoutX="314.0" layoutY="12.0" prefHeight="26.0" prefWidth="361.0" style="-fx-background-color: #ecf0f1; -fx-background-radius: 50;">
          <children>
-            <TextField layoutX="30.0" prefHeight="26.0" prefWidth="333.0" promptText="Search Product" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+            <TextField fx:id="txtSearch" layoutX="30.0" prefHeight="26.0" prefWidth="333.0" promptText="Search Product" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
          </children>
       </Pane>
-      <JFXButton layoutX="13.0" layoutY="55.0" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #3742fa;" text="Gents" textFill="WHITE">
+      <JFXButton layoutX="13.0" layoutY="55.0" onAction="#btnGentsOnAction" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #3742fa;" text="Gents" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="165.0" layoutY="55.0" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #3742fa;" text="Ladies" textFill="WHITE">
+      <JFXButton layoutX="165.0" layoutY="55.0" onAction="#btnLadiesOnAction" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #3742fa;" text="Ladies" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="317.0" layoutY="55.0" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #3742fa;" text="Kids" textFill="WHITE">
+      <JFXButton layoutX="317.0" layoutY="55.0" onAction="#btnKidsOnAction" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #3742fa;" text="Kids" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
+      <ScrollPane layoutX="15.0" layoutY="97.0" prefHeight="390.0" prefWidth="442.0">
+         <content>
+            <VBox fx:id="ScrollVBox" prefHeight="392.0" prefWidth="441.0" />
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>
