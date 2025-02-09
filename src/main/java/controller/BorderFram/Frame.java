@@ -1,6 +1,6 @@
 package controller.BorderFram;
 
-import controller.LoginForm.UserSession;
+import DTO.UserSession;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -104,14 +104,14 @@ public class Frame implements Initializable {
         }
 
         /////////////   set the userName    //////////////
-        String getLoginUserName = UserSession.getInstance().getUserName();
-        UserName.setText(getLoginUserName);
+        UserName.setText(UserSession.getInstance().getUserName());
     }
 
     public String getDate(){
         LocalDate date = LocalDate.now();
         String stringDate = date.toString();
         lblDate.setText(stringDate);
+        UserSession.getInstance().setDate(lblDate.getText());
         return stringDate;
     }
 
@@ -122,6 +122,7 @@ public class Frame implements Initializable {
                 Duration.ZERO , actionEvent -> {
                     String curruntTime = LocalTime.now().format(timeFormatter);
                     lblTime.setText(curruntTime);
+                    UserSession.getInstance().setTime(lblTime.getText());
                  }),
                 new KeyFrame(Duration.seconds(1))
                 );

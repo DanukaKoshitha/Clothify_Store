@@ -1,6 +1,9 @@
 package services.Coustom.Impl;
 
+import DTO.PlaceOrder;
 import DTO.Product;
+import DTO.ProductOrder;
+import javafx.collections.ObservableList;
 import services.Coustom.PlaceOrderService;
 import DBConnection.dbConnection;
 
@@ -17,7 +20,7 @@ public class PlaceOrderServiceImpl implements PlaceOrderService {
     }
 
     @Override
-    public List<Product> GentsProductList(String category) {
+    public List<Product> productList(String category) {
         try {
             Connection connection = dbConnection.getInstance().getConnection();
             PreparedStatement pst = connection.prepareStatement("SELECT * FROM Product WHERE Category=?");
@@ -64,6 +67,53 @@ public class PlaceOrderServiceImpl implements PlaceOrderService {
             String incrementID = String.format("%04d",number);
 
             return "OR"+incrementID;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public boolean placeOrder(PlaceOrder order) {
+        try {
+            Connection connection = dbConnection.getInstance().getConnection();
+            PreparedStatement pst = connection.prepareStatement("INSERT INTO Orders values (?,?,?,?)");
+
+            pst.setString(1,order.getOrderID());
+            pst.setInt(2,order.getUserID());
+            pst.setDouble(3,order.getTotal());
+            pst.setString(4,order.getDate());
+
+            return pst.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public boolean setOrderProductList(ObservableList<ProductOrder> observableList,String orderID) {
+        try {
+            Connection connection = dbConnection.getInstance().getConnection();
+            PreparedStatement pst = connection.prepareStatement("INSERT INTO orderdetails values (?,?,?)");
+
+            ArrayList<ProductOrder> arrayList = new ArrayList<>();
+
+            for(ProductOrder productOrder : observableList){
+                arrayList.add(productOrder);
+            }
+
+            arrayList.forEach(productOrder -> {
+                try {
+                    pst.setString(1,productOrder.getProductName());
+                    pst.setString(2,orderID);
+                    pst.setInt(3,productOrder.getQty());
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+
+            return pst.executeUpdate() > 0;
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

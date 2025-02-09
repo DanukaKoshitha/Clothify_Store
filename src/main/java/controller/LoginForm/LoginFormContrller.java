@@ -1,6 +1,7 @@
 package controller.LoginForm;
 
 import DBConnection.dbConnection;
+import DTO.UserSession;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -31,14 +32,17 @@ public class LoginFormContrller {
 
             if (rst.next()){
 
-                String username = rst.getString("Name");
-                UserSession.getInstance().setUserName(username);
-
                 Stage stage = (Stage) txtEmail.getScene().getWindow();
 
                 Scene newScene = new Scene(FXMLLoader.load(getClass().getResource("/View/Frame.fxml")));
                 stage.setTitle("Clothify Store");
                 stage.setScene(newScene);
+
+                /////////////////   get login user name and user id   ////////////////
+                int userID = rst.getInt(1);
+                String username = rst.getString(2);
+                UserSession.getInstance().setUserName(username);
+                UserSession.getInstance().setUserID(userID);
 
             }else {
                 new Alert(Alert.AlertType.ERROR,"Invalid Password and Email !").show();

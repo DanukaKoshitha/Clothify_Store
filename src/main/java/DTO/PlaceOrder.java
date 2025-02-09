@@ -12,7 +12,7 @@ import lombok.ToString;
 
 public class PlaceOrder {
     private String orderID;
-    private String userID;
+    private int userID;
     private double total;
     private String date;
 }

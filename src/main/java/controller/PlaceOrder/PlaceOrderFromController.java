@@ -1,10 +1,11 @@
 package controller.PlaceOrder;
 
+import DTO.PlaceOrder;
 import DTO.Product;
 import DTO.ProductOrder;
 import Util.ServiceType;
 import controller.BorderFram.Frame;
-import controller.LoginForm.UserSession;
+import DTO.UserSession;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,15 +37,28 @@ public class PlaceOrderFromController implements Initializable {
     public TextField txtSearch;
     public VBox ScrollVBox;
     private ObservableList<ProductOrder> orderList = FXCollections.observableArrayList();
-
+    double total = 0.0;
 
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
-        Frame frame = new Frame();
-        String dateText = frame.lblDate.getText();
-        String timeText = frame.lblTime.getText();
-        String userName = UserSession.getInstance().getUserName();
+        int userID = UserSession.getInstance().getUserID();
+        String timeText = UserSession.getInstance().getTime();
+        String dateText = UserSession.getInstance().getDate();
 
+        boolean isOrderSuccess = service.placeOrder(new PlaceOrder(
+                lblOrderID.getText(),
+                userID,
+                Double.parseDouble(lblTotal.getText()),
+                dateText+"|"+timeText
+                )
+        );
 
+        boolean isAddProduct = service.setOrderProductList(orderList,lblOrderID.getText());
+
+        if (isOrderSuccess && isAddProduct){
+            new Alert(Alert.AlertType.CONFIRMATION,"Place Order !").show();
+        }else {
+            new Alert(Alert.AlertType.ERROR,"Try Again !").show();
+        }
     }
 
     public void btnGentsOnAction(ActionEvent actionEvent) {
@@ -60,7 +74,7 @@ public class PlaceOrderFromController implements Initializable {
     }
 
     public void showProducts(String name){
-        List<Product> ProductList = service.GentsProductList(name);
+        List<Product> ProductList = service.productList(name);
         ScrollVBox.getChildren().clear();
 
         GridPane gridPane = new GridPane();
@@ -125,17 +139,20 @@ public class PlaceOrderFromController implements Initializable {
         HBox qtyBox = new HBox(5, qtyLabel, qtySpinner);
         qtyBox.setAlignment(Pos.CENTER);
 
+
+
         // ✅ Now `qtySpinner` is accessible inside the lambda
         imageView.setOnMouseClicked(event -> {
             int selectedQty = qtySpinner.getValue();  // ✅ Now `qtySpinner` is accessible
             addToTable(product.getName(), selectedQty);
+            total += selectedQty*product.getPrice();
+            lblTotal.setText(String.valueOf(total));
         });
 
         // Add elements to VBox
         vbox.getChildren().addAll(imageView, separator, detailsBox, qtyBox);
         return vbox;
     }
-
 
     private void addToTable(String productName, int quantity) {
         ProductOrder newOrder = new ProductOrder(productName, quantity);
