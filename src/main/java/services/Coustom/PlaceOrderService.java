@@ -16,4 +16,6 @@ public interface PlaceOrderService extends SuperServices {
     boolean placeOrder(PlaceOrder order);
 
     boolean setOrderProductList(ObservableList<ProductOrder> observableList,String orderID);
+
+    Product searchProduct(String name);
 }

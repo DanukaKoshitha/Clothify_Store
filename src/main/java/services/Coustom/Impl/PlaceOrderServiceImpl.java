@@ -97,23 +97,42 @@ public class PlaceOrderServiceImpl implements PlaceOrderService {
             Connection connection = dbConnection.getInstance().getConnection();
             PreparedStatement pst = connection.prepareStatement("INSERT INTO orderdetails values (?,?,?)");
 
-            ArrayList<ProductOrder> arrayList = new ArrayList<>();
-
             for(ProductOrder productOrder : observableList){
-                arrayList.add(productOrder);
+                pst.setString(1,productOrder.getProductName());
+                pst.setString(2,orderID);
+                pst.setInt(3,productOrder.getQty());
+                pst.addBatch();
             }
+            int[] result = pst.executeBatch();
+            return result.length == observableList.size();
 
-            arrayList.forEach(productOrder -> {
-                try {
-                    pst.setString(1,productOrder.getProductName());
-                    pst.setString(2,orderID);
-                    pst.setInt(3,productOrder.getQty());
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-            });
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-            return pst.executeUpdate() > 0;
+    @Override
+    public Product searchProduct(String name) {
+        try {
+            Connection connection = dbConnection.getInstance().getConnection();
+            PreparedStatement pst = connection.prepareStatement("SELECT * FROM Product WHERE Name=?");
+            pst.setString(1,name);
+            ResultSet rst = pst.executeQuery();
+
+            Product searchProduct = null;
+
+            while (rst.next()){
+                searchProduct = new Product(
+                        rst.getString(1),
+                        rst.getString(2),
+                        rst.getString(3),
+                        rst.getString(4),
+                        rst.getInt(5),
+                        rst.getInt(6),
+                        rst.getString(7)
+                );
+            }
+            return searchProduct;
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

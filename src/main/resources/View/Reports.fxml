@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TreeView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Report.OrderReports">
+<AnchorPane prefHeight="500.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Report.OrderReports">
    <children>
-      <TableView layoutX="18.0" layoutY="53.0" prefHeight="434.0" prefWidth="443.0" style="-fx-background-radius: 8;">
+      <TableView fx:id="table" layoutX="18.0" layoutY="53.0" prefHeight="434.0" prefWidth="443.0" style="-fx-background-radius: 8;">
         <columns>
-          <TableColumn prefWidth="63.20001220703125" text="Order ID" />
-          <TableColumn prefWidth="64.79998779296875" text="User ID" />
-            <TableColumn prefWidth="100.800048828125" text="Total" />
-            <TableColumn prefWidth="143.19993591308594" text="Date" />
-            <TableColumn prefWidth="69.60003662109375" text="Action" />
+          <TableColumn fx:id="colOrderID" prefWidth="63.20001220703125" text="Order ID" />
+          <TableColumn fx:id="colUserID" prefWidth="64.79998779296875" text="User ID" />
+            <TableColumn fx:id="colTotal" prefWidth="100.800048828125" text="Total" />
+            <TableColumn fx:id="colDate" prefWidth="143.19993591308594" text="Date" />
+            <TableColumn fx:id="colAction" prefWidth="69.60003662109375" text="Action" />
         </columns>
       </TableView>
       <JFXButton layoutX="486.0" layoutY="446.0" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #3742fa; -fx-background-radius: 10;" text="Print" textFill="#fcfafa">
@@ -42,7 +37,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="533.0" layoutY="59.0" prefHeight="16.0" prefWidth="87.0" text="P000" textFill="#2e86de">
+      <Label fx:id="lblOrderID" layoutX="533.0" layoutY="59.0" prefHeight="16.0" prefWidth="87.0" text="P000" textFill="#2e86de">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>
@@ -57,7 +52,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <JFXButton layoutX="486.0" layoutY="449.0" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #3742fa;" text="Print" textFill="WHITE">
+      <JFXButton layoutX="486.0" layoutY="449.0" onAction="#btnPrintOnAction" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #3742fa;" text="Print" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -67,25 +62,21 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="532.0" layoutY="401.0" prefHeight="26.0" prefWidth="138.0" promptText="LKR 0.00" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+      <TextField fx:id="lblTotal" layoutX="532.0" layoutY="401.0" prefHeight="26.0" prefWidth="138.0" promptText="LKR 0.00" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
       <Label layoutX="474.0" layoutY="361.0" text="Date">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="533.0" layoutY="357.0" prefHeight="26.0" prefWidth="138.0" promptText="YYYY MM DD " style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+      <TextField fx:id="lblDate" layoutX="533.0" layoutY="357.0" prefHeight="26.0" prefWidth="138.0" promptText="YYYY MM DD " style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
       <TableView layoutX="473.0" layoutY="171.0" prefHeight="176.0" prefWidth="200.0">
         <columns>
-          <TableColumn prefWidth="146.4000244140625" text="Product" />
-          <TableColumn prefWidth="52.7999267578125" text="QTY" />
+          <TableColumn fx:id="colProduct" prefWidth="146.4000244140625" text="Product" />
+          <TableColumn fx:id="colQTY" prefWidth="52.7999267578125" text="QTY" />
         </columns>
       </TableView>
-      <Pane layoutX="123.0" layoutY="15.0" prefHeight="26.0" prefWidth="331.0" style="-fx-background-color: #ecf0f1; -fx-background-radius: 50;">
-         <children>
-            <TextField layoutX="30.0" prefHeight="26.0" prefWidth="307.0" promptText="Search Product" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
-         </children>
-      </Pane>
-      <Label layoutX="533.0" layoutY="99.0" prefHeight="16.0" prefWidth="87.0" text="U000" textFill="#2e86de">
+      <Pane layoutX="123.0" layoutY="15.0" prefHeight="26.0" prefWidth="331.0" style="-fx-background-color: #ecf0f1; -fx-background-radius: 50;" />
+      <Label fx:id="lblUserID" layoutX="533.0" layoutY="99.0" prefHeight="16.0" prefWidth="87.0" text="U000" textFill="#2e86de">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>

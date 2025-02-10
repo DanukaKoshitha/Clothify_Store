@@ -1,10 +1,7 @@
 package services;
 
 import Util.ServiceType;
-import services.Coustom.Impl.PlaceOrderServiceImpl;
-import services.Coustom.Impl.ProductServiceImpl;
-import services.Coustom.Impl.SupplierServiceImpl;
-import services.Coustom.Impl.UserServiceImpl;
+import services.Coustom.Impl.*;
 
 public class ServiceFactory {
     private static ServiceFactory instance;
@@ -27,6 +24,9 @@ public class ServiceFactory {
                 return (T) ProductServiceImpl.getInstance();
             }case PLACEORDER -> {
                 return (T) PlaceOrderServiceImpl.getInstance();
+            }
+            case REPORTS -> {
+                return (T) ReportServiceImpl.getInstance();
             }
         }
         return null;

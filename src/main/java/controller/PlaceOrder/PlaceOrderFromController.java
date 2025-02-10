@@ -4,7 +4,6 @@ import DTO.PlaceOrder;
 import DTO.Product;
 import DTO.ProductOrder;
 import Util.ServiceType;
-import controller.BorderFram.Frame;
 import DTO.UserSession;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,11 +14,13 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import services.Coustom.PlaceOrderService;
 import services.ServiceFactory;
+
 
 import java.net.URL;
 import java.util.List;
@@ -48,7 +49,7 @@ public class PlaceOrderFromController implements Initializable {
                 lblOrderID.getText(),
                 userID,
                 Double.parseDouble(lblTotal.getText()),
-                dateText+"|"+timeText
+                dateText+" | "+timeText
                 )
         );
 
@@ -169,5 +170,25 @@ public class PlaceOrderFromController implements Initializable {
 
         ////////////  set order id   ////////////
         lblOrderID.setText(service.setOrderID());
+    }
+
+    public void btnNewOnAction(ActionEvent actionEvent) {
+        lblTotal.setText("");
+        orderList.clear();
+        table.setItems(orderList);
+        lblOrderID.setText(service.setOrderID());
+        showProducts("Gents");
+    }
+
+    public void searchOnKeyReleased(KeyEvent keyEvent) {
+        String searchText = txtSearch.getText().trim();
+
+        if (searchText.isEmpty()) {
+            showProducts("Gents");
+        } else {
+            VBox productCard = createProductCard(service.searchProduct(searchText));
+            ScrollVBox.getChildren().clear();
+            ScrollVBox.getChildren().add(productCard);
+        }
     }
 }

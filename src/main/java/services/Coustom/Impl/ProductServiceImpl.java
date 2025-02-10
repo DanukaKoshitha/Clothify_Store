@@ -124,7 +124,7 @@ public class ProductServiceImpl implements ProductService {
             Statement stm = connection.createStatement();
             ResultSet rst = stm.executeQuery("SELECT * FROM Product");
 
-            AbstractList<Product> productsList = new ArrayList<>();
+            ArrayList<Product> productsList = new ArrayList<>();
 
             while (rst.next()){
                 productsList.add(new Product(
