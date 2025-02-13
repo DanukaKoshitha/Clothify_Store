@@ -133,7 +133,6 @@ public class UserFormController implements Initializable {
         comboBox.setItems(FXCollections.observableArrayList(new ArrayList<>(Arrays.asList("Admin","Employee"))));
 
         table.setItems(service.loadTabel());
-
     }
 
     public void clearTextField(){

@@ -9,5 +9,4 @@ public class Dashboard {
     public Label lblNewUsers;
     public Label lblEmployee;
 
-
 }

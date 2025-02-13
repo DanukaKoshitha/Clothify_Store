@@ -22,7 +22,8 @@ public class ServiceFactory {
             }
             case PRODUCT -> {
                 return (T) ProductServiceImpl.getInstance();
-            }case PLACEORDER -> {
+            }
+            case PLACEORDER -> {
                 return (T) PlaceOrderServiceImpl.getInstance();
             }
             case REPORTS -> {

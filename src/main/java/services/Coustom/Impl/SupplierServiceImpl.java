@@ -1,12 +1,17 @@
 package services.Coustom.Impl;
-import DBConnection.dbConnection;
 
+import Entity.SupplierEntity;
+import Repository.Custom.SupplierDao;
+import Repository.DaoFactory;
+import Util.DaoType;
+import DTO.Supplier;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import DTO.Supplier;
+import org.modelmapper.ModelMapper;
 import services.Coustom.SupplierService;
 
-import java.sql.*;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class SupplierServiceImpl implements SupplierService{
     private static SupplierServiceImpl instance;
@@ -17,133 +22,50 @@ public class SupplierServiceImpl implements SupplierService{
         return instance == null ? instance = new SupplierServiceImpl() : instance;
     }
 
+    private SupplierDao supplierDao = DaoFactory.getInstance().getDaoType(DaoType.SUPPLIER);
+    ModelMapper mapper = new ModelMapper();
+
     @Override
     public boolean addSupplier(Supplier supplier) {
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            PreparedStatement pst = connection.prepareStatement("INSERT INTO Supplier values(?,?,?,?,?)");
 
-            pst.setString(1,supplier.getId());
-            pst.setString(2,supplier.getName());
-            pst.setString(3,supplier.getEmail());
-            pst.setString(4,supplier.getCompany());
-            pst.setString(5,supplier.getItem());
+        return supplierDao.save(mapper.map(supplier,SupplierEntity.class)) ? true : false;
 
-            return pst.executeUpdate()>0;
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        // mapper.map(supplier,SupplierEntity.class  -->  DTO Convert to Entity
     }
 
     @Override
     public String setSupplierID() {
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            Statement stm = connection.createStatement();
-            ResultSet rst = stm.executeQuery("SELECT SupplierID FROM Supplier");
-
-           String lastID = "S000";
-
-           while (rst.next()){
-               String currentID = rst.getString(1);
-               if(currentID.compareTo(lastID) > 0){
-                   lastID=currentID;
-               }
-           }
-            String substring = lastID.substring(1);
-            int number = Integer.parseInt(substring) +1;
-            String incrementID = String.format("%03d",number);
-
-            return "S"+ incrementID;
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        return supplierDao.setSupplierID();
     }
 
     @Override
     public ObservableList<Supplier> loadTabel() {
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            Statement stm = connection.createStatement();
-            ResultSet rst = stm.executeQuery("SELECT * FROM Supplier");
 
-            ObservableList<Supplier> observableList = FXCollections.observableArrayList();
+        List<SupplierEntity> supplierEntities = supplierDao.getAll();
 
-            while (rst.next()){
-                observableList.add(new Supplier(
-                        rst.getString(1),
-                        rst.getString(2),
-                        rst.getString(3),
-                        rst.getString(4),
-                        rst.getString(5)
-                ));
-            }
-            return observableList;
+        // Map each SupplierEntity to Supplier DTO
+        List<Supplier> supplierList = supplierEntities.stream()
+                .map(entity -> mapper.map(entity, Supplier.class))
+                .collect(Collectors.toList());
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
+        // Convert to ObservableList
+        return FXCollections.observableArrayList(supplierList);
     }
 
     @Override
     public boolean deleteSupplier(String id) {
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            PreparedStatement pst = connection.prepareStatement("DELETE FROM Supplier WHERE SupplierID=?");
-            pst.setString(1,id);
-
-            return pst.executeUpdate() > 0;
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        return supplierDao.delete(id) ? true : false;
     }
 
     @Override
     public Supplier searchSupplier(String Name) {
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            PreparedStatement pst = connection.prepareStatement("SELECT * FROM Supplier WHERE Name=?");
-            pst.setString(1,Name);
-            ResultSet rst = pst.executeQuery();
+       return mapper.map(supplierDao.searchSupplier(Name), Supplier.class);
 
-            Supplier supplier = null;
-
-            while (rst.next()){
-                supplier = new Supplier(
-                        rst.getString(1),
-                        rst.getString(2),
-                        rst.getString(3),
-                        rst.getString(4),
-                        rst.getString(5)
-                );
-            }
-            return supplier;
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+       // mapper.map(supplierDao.searchSupplier(Name), Supplier.class)  --> Entity convert to DTO
     }
 
     @Override
     public boolean update(Supplier supplier) {
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            PreparedStatement pst = connection.prepareStatement("UPDATE Supplier SET name=?,email=?,company=?,Item=? where supplierID=?");
-
-            pst.setString(1,supplier.getName());
-            pst.setString(2,supplier.getEmail());
-            pst.setString(3,supplier.getCompany());
-            pst.setString(4,supplier.getItem());
-            pst.setString(5,supplier.getId());
-
-            return pst.executeUpdate() > 0;
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        return supplierDao.update(mapper.map(supplier,SupplierEntity.class)) ? true : false;
     }
 }

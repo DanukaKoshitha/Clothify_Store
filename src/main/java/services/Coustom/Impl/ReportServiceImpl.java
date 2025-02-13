@@ -2,14 +2,17 @@ package services.Coustom.Impl;
 
 import DTO.PlaceOrder;
 import DTO.ProductOrder;
+import Entity.PlaceOrderEntity;
+import Repository.Custom.ReportDao;
+import Repository.DaoFactory;
+import Util.DaoType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.modelmapper.ModelMapper;
 import services.Coustom.ReportService;
-import DBConnection.dbConnection;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ReportServiceImpl implements ReportService {
     private static ReportServiceImpl instance;
@@ -19,87 +22,32 @@ public class ReportServiceImpl implements ReportService {
         return instance == null ? instance = new ReportServiceImpl() : instance;
     }
 
+    ReportDao reportDao = DaoFactory.getInstance().getDaoType(DaoType.REPORTS);
+    ModelMapper mapper = new ModelMapper();
+
     @Override
     public ObservableList<PlaceOrder> orderList() {
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            PreparedStatement pst = connection.prepareStatement("SELECT * FROM Orders");
-            ResultSet rst = pst.executeQuery();
+        List<PlaceOrderEntity> placeOrderEntities = reportDao.getAll();
 
-            ObservableList<PlaceOrder> observableList = FXCollections.observableArrayList();
+        List<PlaceOrder> placeOrderList = placeOrderEntities.stream()
+                .map(entity -> mapper.map(entity, PlaceOrder.class))
+                .collect(Collectors.toList());
 
-            while (rst.next()){
-                observableList.add(new PlaceOrder(
-                        rst.getString(1),
-                        rst.getInt(2),
-                        rst.getDouble(3),
-                        rst.getString(4)
-                ));
-            }
-            return observableList;
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        return FXCollections.observableArrayList(placeOrderList);
     }
 
     @Override
     public boolean deleteReport(String orderID) {
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            PreparedStatement pst = connection.prepareStatement("DELETE FROM orders WHERE OrderID=?");
-            pst.setString(1,orderID);
-            return pst.executeUpdate() > 0;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        return reportDao.delete(orderID);
     }
 
     @Override
     public PlaceOrder viewReport(String orderID) {
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            PreparedStatement pst = connection.prepareStatement("SELECT * FROM Orders WHERE OrderID=?");
-            pst.setString(1,orderID);
-            ResultSet rst = pst.executeQuery();
-
-            PlaceOrder order = null;
-
-            while (rst.next()){
-                order = new PlaceOrder(
-                        rst.getString(1),
-                        rst.getInt(2),
-                        rst.getDouble(3),
-                        rst.getString(4)
-                );
-            }
-            return order;
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        return mapper.map(reportDao.viewReport(orderID), PlaceOrder.class);
     }
 
     @Override
     public ObservableList<ProductOrder> showProducts(String orderID) {
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            PreparedStatement pst = connection.prepareStatement("SELECT * FROM Orderdetails WHERE OrderID=?");
-            pst.setString(1,orderID);
-            ResultSet rst = pst.executeQuery();
-
-            ObservableList<ProductOrder> list = FXCollections.observableArrayList();
-
-            while (rst.next()){
-                list.add(new ProductOrder(
-                        rst.getString(1),
-                        rst.getInt(3)
-                ));
-            }
-            return list;
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        return reportDao.showProducts(orderID);
     }
 }

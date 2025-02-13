@@ -58,7 +58,6 @@ public class UserServiceImpl implements UserService {
                         )
                 );
             }
-
             return observableList;
 
         } catch (SQLException e) {
