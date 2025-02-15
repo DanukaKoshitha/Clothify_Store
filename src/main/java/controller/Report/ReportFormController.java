@@ -3,6 +3,7 @@ package controller.Report;
 import DTO.PlaceOrder;
 import DTO.ProductOrder;
 import Util.ServiceType;
+import DBConnection.dbConnection;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -11,11 +12,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import services.Coustom.ReportService;
 import services.ServiceFactory;
-
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class ReportFormController implements Initializable {
@@ -37,7 +40,19 @@ public class ReportFormController implements Initializable {
     ReportService service = ServiceFactory.getInstance().getServiceType(ServiceType.REPORTS);
 
     public void btnPrintOnAction(ActionEvent actionEvent) {
+        try {
+            JasperDesign design = JRXmlLoader.load("src/main/resources/Report/ReportsBill.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport(design);
 
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, dbConnection.getInstance().getConnection());
+
+            JasperExportManager.exportReportToPdfFile(jasperPrint,"ORDER REPORT");
+
+            //JasperViewer.viewReport(jasperPrint,false);
+
+        } catch (JRException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

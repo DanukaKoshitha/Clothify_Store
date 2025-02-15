@@ -1,0 +1,72 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Reports" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9121052d-d723-4773-82b6-a543493b57d9">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (5)"/>
+	<query language="SQL"><![CDATA[select * from orders]]></query>
+	<field name="OrderID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OrderID"/>
+		<property name="com.jaspersoft.studio.field.label" value="OrderID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="UserID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="UserID"/>
+		<property name="com.jaspersoft.studio.field.label" value="UserID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="Total" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="Total"/>
+		<property name="com.jaspersoft.studio.field.label" value="Total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="Date" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Date"/>
+		<property name="com.jaspersoft.studio.field.label" value="Date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="51" splitType="Stretch">
+		<element kind="staticText" uuid="0b0e2b15-99cb-4f48-af6b-1a2fd38278e0" x="154" y="7" width="257" height="40" fontSize="25.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[ORDER REPORT]]></text>
+		</element>
+	</title>
+	<pageHeader height="36" splitType="Stretch">
+		<element kind="staticText" uuid="6bf5df58-06ab-4536-bdde-35e108947ea4" x="187" y="4" width="180" height="30" fontSize="16.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Clothify Store]]></text>
+		</element>
+	</pageHeader>
+	<columnHeader height="47" splitType="Stretch">
+		<element kind="staticText" uuid="379b674a-36c9-497d-ab5f-0d0074426d05" x="10" y="12" width="100" height="30" fontSize="15.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Order ID]]></text>
+		</element>
+		<element kind="staticText" uuid="5ea814ae-f20c-4e21-8e4e-5fd5094a74cb" x="140" y="12" width="100" height="30" fontSize="15.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[User ID]]></text>
+		</element>
+		<element kind="staticText" uuid="43e5316e-64f0-41df-8f42-1c102edd8dfc" x="275" y="12" width="100" height="30" fontSize="15.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Total]]></text>
+		</element>
+		<element kind="staticText" uuid="22b00bc2-f699-499a-8984-a7ef4db74585" x="445" y="12" width="100" height="30" fontSize="15.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Date]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<element kind="textField" uuid="8a813e7b-f4ea-46e6-b31b-99ffeb34f9d8" x="35" y="10" width="100" height="30">
+				<expression><![CDATA[$F{OrderID}]]></expression>
+			</element>
+			<element kind="textField" uuid="ea55b34e-d4cd-4364-bfc5-f32180259251" x="180" y="11" width="100" height="30">
+				<expression><![CDATA[$F{UserID}]]></expression>
+			</element>
+			<element kind="textField" uuid="431b85f3-4dc0-45d1-9680-d6f4f32d1974" x="310" y="10" width="100" height="30">
+				<expression><![CDATA[$F{Total}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c99e8989-494f-4498-acce-dbfbeff56603"/>
+			</element>
+			<element kind="textField" uuid="ffdb7c55-1fd4-4645-babe-3b46114817aa" x="445" y="10" width="100" height="30">
+				<expression><![CDATA[$F{Date}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3309dca1-a0d6-4c9e-909f-74c40aec3756"/>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

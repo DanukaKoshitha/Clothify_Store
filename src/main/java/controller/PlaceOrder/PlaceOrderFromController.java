@@ -3,6 +3,7 @@ package controller.PlaceOrder;
 import DTO.PlaceOrder;
 import DTO.Product;
 import DTO.ProductOrder;
+import Util.InvoiceGenerator;
 import Util.ServiceType;
 import DTO.UserSession;
 import javafx.collections.FXCollections;
@@ -23,6 +24,7 @@ import services.ServiceFactory;
 
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -45,6 +47,17 @@ public class PlaceOrderFromController implements Initializable {
         String timeText = UserSession.getInstance().getTime();
         String dateText = UserSession.getInstance().getDate();
 
+        PlaceOrder order = new PlaceOrder();
+
+        List<ProductOrder> productOrderList = new ArrayList<>();
+
+        order.setOrderID(lblOrderID.getText());
+        order.setUserID(userID);
+        order.setTotal(Double.parseDouble(lblTotal.getText()));
+        order.setDate(dateText + " | " + timeText);
+
+        orderList.forEach(p->productOrderList.add(p));
+
         boolean isOrderSuccess = service.placeOrder(new PlaceOrder(
                 lblOrderID.getText(),
                 userID,
@@ -57,6 +70,8 @@ public class PlaceOrderFromController implements Initializable {
 
         if (isOrderSuccess && isAddProduct){
             new Alert(Alert.AlertType.CONFIRMATION,"Place Order !").show();
+
+            InvoiceGenerator.generateInvoice("C:\\Users\\ASUS\\OneDrive\\Desktop\\invoice\\invoice.pdf",order,productOrderList);
         }else {
             new Alert(Alert.AlertType.ERROR,"Try Again !").show();
         }
