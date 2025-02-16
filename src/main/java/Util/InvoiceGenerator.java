@@ -27,7 +27,7 @@ import java.util.List;
                 document.add(new Paragraph("Order ID     : " + placeOrder.getOrderID(), orderDetailsFont));
                 document.add(new Paragraph("User ID      : " + placeOrder.getUserID(), orderDetailsFont));
                 document.add(new Paragraph("Order Date: " + placeOrder.getDate(), orderDetailsFont));
-                document.add(new Paragraph("Total          : $" + placeOrder.getTotal(), orderDetailsFont));
+                document.add(new Paragraph("Total          : " + placeOrder.getTotal(), orderDetailsFont));
                 document.add(new Paragraph("\n"));
 
                 // Table for order items

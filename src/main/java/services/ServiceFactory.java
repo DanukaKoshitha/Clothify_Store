@@ -29,6 +29,9 @@ public class ServiceFactory {
             case REPORTS -> {
                 return (T) ReportServiceImpl.getInstance();
             }
+            case DASHBOARD -> {
+                return (T) DashboardServiceImpl.getInstance();
+            }
         }
         return null;
     }

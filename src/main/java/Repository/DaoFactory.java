@@ -1,9 +1,6 @@
 package Repository;
 
-import Repository.Custom.Impl.PlaceOrderDaoImpl;
-import Repository.Custom.Impl.ProductDaoImpl;
-import Repository.Custom.Impl.ReportDaoImpl;
-import Repository.Custom.Impl.SupplierDaoImpl;
+import Repository.Custom.Impl.*;
 import Util.DaoType;
 
 public class DaoFactory {
@@ -20,6 +17,7 @@ public class DaoFactory {
             case PRODUCT  : return (T) new ProductDaoImpl();
             case PLACEORDER:return (T) new PlaceOrderDaoImpl();
             case REPORTS  : return (T) new ReportDaoImpl();
+            case DASHBOARD: return (T) new DashboardDaoImpl();
         }
         return null;
     }
