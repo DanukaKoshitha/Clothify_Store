@@ -1,14 +1,12 @@
 package DTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Builder
 
 public class UserSession {
     private static UserSession instance;

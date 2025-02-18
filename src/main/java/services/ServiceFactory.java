@@ -32,6 +32,12 @@ public class ServiceFactory {
             case DASHBOARD -> {
                 return (T) DashboardServiceImpl.getInstance();
             }
+            case LOGIN -> {
+                return (T) LoginServiceImpl.getInstance();
+            }
+            case FORGOTPASSWORD -> {
+                return (T) ForgotPasswordServiceImpl.getInstance();
+            }
         }
         return null;
     }

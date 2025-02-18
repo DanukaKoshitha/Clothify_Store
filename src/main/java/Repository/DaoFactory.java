@@ -18,6 +18,8 @@ public class DaoFactory {
             case PLACEORDER:return (T) new PlaceOrderDaoImpl();
             case REPORTS  : return (T) new ReportDaoImpl();
             case DASHBOARD: return (T) new DashboardDaoImpl();
+            case LOGIN    : return (T) new LoginDaoImpl();
+            case FORGOTPASSWORD:return (T) new ForgotPasswordDaoImpl();
         }
         return null;
     }
