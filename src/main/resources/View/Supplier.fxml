@@ -1,43 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Supplier.SupplierFormController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Supplier.SupplierFormController">
    <children>
-      <TreeView layoutX="460.0" layoutY="52.0" prefHeight="433.0" prefWidth="215.0" style="-fx-border-color: blue;" />
-      <Label layoutX="470.0" layoutY="62.0" text="Supplier Details">
+      <TreeView layoutX="555.0" layoutY="52.0" prefHeight="434.0" prefWidth="234.0" style="-fx-border-color: blue;" />
+      <Label layoutX="565.0" layoutY="62.0" text="Supplier Details">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="471.0" layoutY="109.0" text="Supplier ID">
+      <Label layoutX="566.0" layoutY="109.0" text="Supplier ID">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblID" layoutX="545.0" layoutY="110.0" prefHeight="16.0" prefWidth="87.0" text="P000" textFill="#2e86de">
+      <Label fx:id="lblID" layoutX="640.0" layoutY="110.0" prefHeight="16.0" prefWidth="87.0" text="P000" textFill="#2e86de">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>
       </Label>
-      <Label layoutX="470.0" layoutY="155.0" text="Name">
+      <Label layoutX="565.0" layoutY="155.0" text="Name">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txtName" layoutX="545.0" layoutY="151.0" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
-      <JFXButton layoutX="499.0" layoutY="357.0" onAction="#btnAddOnAction" prefHeight="26.0" prefWidth="143.0" style="-fx-background-color: #74b9ff; -fx-background-radius: 5;" text="Add" textFill="#fcfcfc">
+      <TextField fx:id="txtName" layoutX="640.0" layoutY="151.0" prefHeight="26.0" prefWidth="137.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+      <JFXButton layoutX="591.0" layoutY="357.0" onAction="#btnAddOnAction" prefHeight="26.0" prefWidth="168.0" style="-fx-background-color: #74b9ff; -fx-background-radius: 5;" text="Add" textFill="#fcfcfc">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
-      <JFXButton layoutX="499.0" layoutY="400.0" onAction="#btnUpdateOnAction" prefHeight="26.0" prefWidth="143.0" style="-fx-background-color: #636e72; -fx-background-radius: 5;" text="Update" textFill="WHITE">
+      <JFXButton layoutX="590.0" layoutY="400.0" onAction="#btnUpdateOnAction" prefHeight="26.0" prefWidth="168.0" style="-fx-background-color: #636e72; -fx-background-radius: 5;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
-      <JFXButton layoutX="499.0" layoutY="445.0" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="143.0" style="-fx-background-color: #d63031; -fx-background-radius: 5;" text="Delete" textFill="WHITE">
+      <JFXButton layoutX="590.0" layoutY="445.0" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="168.0" style="-fx-background-color: #d63031; -fx-background-radius: 5;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
@@ -46,39 +51,39 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Pane layoutX="313.0" layoutY="13.0" prefHeight="26.0" prefWidth="361.0" style="-fx-background-color: #ecf0f1; -fx-background-radius: 50;">
+      <Pane layoutX="426.0" layoutY="13.0" prefHeight="26.0" prefWidth="361.0" style="-fx-background-color: #ecf0f1; -fx-background-radius: 50;">
          <children>
             <TextField fx:id="txtSearchSupplier" layoutX="31.0" onKeyReleased="#OnKeyReleased" prefHeight="26.0" prefWidth="333.0" promptText="Search Supplier" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
          </children>
       </Pane>
-      <TableView fx:id="table" layoutX="14.0" layoutY="51.0" prefHeight="434.0" prefWidth="439.0">
+      <TableView fx:id="table" layoutX="14.0" layoutY="51.0" prefHeight="434.0" prefWidth="529.0">
         <columns>
           <TableColumn fx:id="colID" prefWidth="57.600008964538574" text="ID" />
           <TableColumn fx:id="colName" prefWidth="92.80001831054688" text="Name" />
             <TableColumn fx:id="colCompany" prefWidth="104.79997253417969" text="Company" />
-            <TableColumn fx:id="colEmail" prefWidth="86.4000244140625" text="Email" />
-            <TableColumn fx:id="colItem" prefWidth="96.0" text="Item" />
+            <TableColumn fx:id="colEmail" prefWidth="137.60003662109375" text="Email" />
+            <TableColumn fx:id="colItem" prefWidth="135.20001220703125" text="Item" />
         </columns>
       </TableView>
-      <Label layoutX="469.0" layoutY="204.0" text="Company">
+      <Label layoutX="564.0" layoutY="204.0" text="Company">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCompany" layoutX="544.0" layoutY="200.0" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
-      <Label layoutX="469.0" layoutY="256.0" text="Email">
+      <TextField fx:id="txtCompany" layoutX="639.0" layoutY="200.0" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+      <Label layoutX="564.0" layoutY="256.0" text="Email">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txtEmail" layoutX="543.0" layoutY="252.0" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
-      <Label layoutX="470.0" layoutY="308.0" text="Item">
+      <TextField fx:id="txtEmail" layoutX="638.0" layoutY="252.0" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+      <Label layoutX="565.0" layoutY="308.0" text="Item">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txtItem" layoutX="543.0" layoutY="303.0" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
-      <Label layoutX="606.0" layoutY="60.0" onDragDetected="#btnNewOnAction" prefHeight="26.0" prefWidth="63.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="      New" textFill="WHITE">
+      <TextField fx:id="txtItem" layoutX="638.0" layoutY="303.0" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #c8d6e5; -fx-background-radius: 5;" />
+      <Label layoutX="701.0" layoutY="60.0" onDragDetected="#btnNewOnAction" prefHeight="26.0" prefWidth="63.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="      New" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

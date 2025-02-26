@@ -1,6 +1,6 @@
 package controller.User;
 
-import Util.ServiceType;
+import util.ServiceType;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -11,8 +11,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
-import DTO.User;
-import DTO.UserData;
+import dto.User;
+import dto.UserData;
 import services.Coustom.UserService;
 import services.ServiceFactory;
 

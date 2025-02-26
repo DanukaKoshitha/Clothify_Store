@@ -1,8 +1,8 @@
 package services.Coustom;
 
-import DTO.PlaceOrder;
-import DTO.Product;
-import DTO.ProductOrder;
+import dto.PlaceOrder;
+import dto.Product;
+import dto.ProductOrder;
 import javafx.collections.ObservableList;
 import services.SuperServices;
 

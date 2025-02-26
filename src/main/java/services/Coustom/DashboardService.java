@@ -1,6 +1,6 @@
 package services.Coustom;
 
-import DTO.Product;
+import dto.Product;
 import services.SuperServices;
 
 import java.util.List;

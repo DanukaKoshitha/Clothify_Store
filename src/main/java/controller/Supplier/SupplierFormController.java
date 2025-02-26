@@ -1,15 +1,13 @@
 package controller.Supplier;
 
-import Util.ServiceType;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import util.ServiceType;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import DTO.Supplier;
+import dto.Supplier;
 import services.Coustom.SupplierService;
 import services.ServiceFactory;
 

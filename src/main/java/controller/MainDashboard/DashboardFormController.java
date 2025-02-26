@@ -1,7 +1,7 @@
 package controller.MainDashboard;
 
-import DTO.Product;
-import Util.ServiceType;
+import dto.Product;
+import util.ServiceType;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -30,8 +30,8 @@ public class DashboardFormController implements Initializable {
 
     public void setLables(){
         lblSales.setText(service.getTotalSeles());
-        lblEmployee.setText(service.getTotalEmployees()+"+");
-        lblIncome.setText(service.getTotalAmount()+"+");
+        lblEmployee.setText(String.valueOf(service.getTotalEmployees()));
+        lblIncome.setText(String.valueOf(service.getTotalAmount()));
         lblSuppliers.setText(service.getTotalSuppliers());
 
         lblSuppliers.setAlignment(Pos.CENTER);

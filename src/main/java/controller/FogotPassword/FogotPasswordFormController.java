@@ -1,6 +1,6 @@
 package controller.FogotPassword;
 
-import Util.ServiceType;
+import util.ServiceType;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;

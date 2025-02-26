@@ -4,15 +4,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="501.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainDashboard.DashboardFormController">
+<AnchorPane prefHeight="501.0" prefWidth="800.0" style="-fx-background-color: #67e6dc;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainDashboard.DashboardFormController">
    <children>
-      <Label alignment="CENTER" layoutX="177.0" layoutY="25.0" prefHeight="18.0" prefWidth="362.0" text="Hi, Welcome back !">
+      <Label alignment="CENTER" layoutX="231.0" layoutY="19.0" prefHeight="18.0" prefWidth="362.0" text="Hi, Welcome back !">
          <font>
             <Font name="System Bold" size="28.0" />
          </font>
       </Label>
-      <TreeView layoutX="45.0" layoutY="81.0" prefHeight="134.0" prefWidth="141.0" style="-fx-background-color: #ff3838;" />
-      <Pane layoutX="53.0" layoutY="87.0" prefHeight="123.0" prefWidth="126.0" style="-fx-background-color: #D6A2E8;">
+      <TreeView layoutX="70.0" layoutY="81.0" prefHeight="134.0" prefWidth="141.0" style="-fx-background-color: #ff3838;" />
+      <Pane layoutX="78.0" layoutY="87.0" prefHeight="123.0" prefWidth="126.0" style="-fx-background-color: #D6A2E8;">
          <children>
             <Label alignment="CENTER" layoutX="14.0" layoutY="20.0" prefHeight="18.0" prefWidth="95.0" text="Today Sales">
                <font>
@@ -26,8 +26,8 @@
             </Label>
          </children>
       </Pane>
-      <TreeView layoutX="499.0" layoutY="81.0" prefHeight="134.0" prefWidth="141.0" style="-fx-background-color: #ff3838;" />
-      <Pane layoutX="507.0" layoutY="87.0" prefHeight="123.0" prefWidth="126.0" style="-fx-background-color: #ffb8b8;">
+      <TreeView layoutX="580.0" layoutY="81.0" prefHeight="134.0" prefWidth="141.0" style="-fx-background-color: #ff3838;" />
+      <Pane layoutX="588.0" layoutY="87.0" prefHeight="123.0" prefWidth="126.0" style="-fx-background-color: #ffb8b8;">
          <children>
             <Label alignment="CENTER" layoutX="14.0" layoutY="20.0" prefHeight="25.0" prefWidth="101.0" text="Total Income">
                <font>
@@ -41,8 +41,8 @@
             </Label>
          </children>
       </Pane>
-      <TreeView layoutX="197.0" layoutY="81.0" prefHeight="134.0" prefWidth="141.0" style="-fx-background-color: #ff3838;" />
-      <Pane layoutX="205.0" layoutY="87.0" prefHeight="123.0" prefWidth="126.0" style="-fx-background-color: #ffb8b8;">
+      <TreeView layoutX="240.0" layoutY="81.0" prefHeight="134.0" prefWidth="141.0" style="-fx-background-color: #ff3838;" />
+      <Pane layoutX="248.0" layoutY="87.0" prefHeight="123.0" prefWidth="126.0" style="-fx-background-color: #ffb8b8;">
          <children>
             <Label alignment="CENTER" layoutX="16.0" layoutY="23.0" prefHeight="18.0" prefWidth="95.0" text="Suppliers">
                <font>
@@ -56,8 +56,8 @@
             </Label>
          </children>
       </Pane>
-      <TreeView layoutX="349.0" layoutY="81.0" prefHeight="134.0" prefWidth="141.0" style="-fx-background-color: #ff3838;" />
-      <Pane layoutX="358.0" layoutY="86.0" prefHeight="123.0" prefWidth="126.0" style="-fx-background-color: #D6A2E8;">
+      <TreeView layoutX="411.0" layoutY="81.0" prefHeight="134.0" prefWidth="141.0" style="-fx-background-color: #ff3838;" />
+      <Pane layoutX="420.0" layoutY="86.0" prefHeight="123.0" prefWidth="126.0" style="-fx-background-color: #D6A2E8;">
          <children>
             <Label alignment="CENTER" layoutX="16.0" layoutY="21.0" prefHeight="18.0" prefWidth="95.0" text="Employee">
                <font>
@@ -71,24 +71,24 @@
             </Label>
          </children>
       </Pane>
-      <Label layoutX="68.0" layoutY="245.0" prefHeight="30.0" prefWidth="242.0" text="Most Profitable Products">
+      <Label layoutX="107.0" layoutY="245.0" prefHeight="30.0" prefWidth="242.0" text="Most Profitable Products">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="402.0" layoutY="244.0" prefHeight="30.0" prefWidth="171.0" text="Popular Products">
+      <Label layoutX="489.0" layoutY="244.0" prefHeight="30.0" prefWidth="171.0" text="Popular Products">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <ScrollPane fx:id="MostProfitableProducts" layoutX="82.0" layoutY="288.0" prefHeight="187.0" prefWidth="205.0">
+      <ScrollPane fx:id="MostProfitableProducts" layoutX="124.0" layoutY="288.0" prefHeight="187.0" prefWidth="198.0">
          <content>
-            <VBox fx:id="profitVbox" prefHeight="200.0" prefWidth="210.0" />
+            <VBox fx:id="profitVbox" prefHeight="200.0" prefWidth="200.0" />
          </content>
       </ScrollPane>
-      <ScrollPane fx:id="PopoulerProductsPane" layoutX="383.0" layoutY="288.0" prefHeight="187.0" prefWidth="212.0">
+      <ScrollPane fx:id="PopoulerProductsPane" layoutX="481.0" layoutY="288.0" prefHeight="187.0" prefWidth="185.0">
          <content>
-            <VBox fx:id="poupularVbox" prefHeight="187.0" prefWidth="210.0" />
+            <VBox fx:id="poupularVbox" prefHeight="187.0" prefWidth="189.0" />
          </content>
       </ScrollPane>
    </children>

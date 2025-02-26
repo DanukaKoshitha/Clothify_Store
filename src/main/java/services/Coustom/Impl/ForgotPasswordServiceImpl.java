@@ -1,8 +1,8 @@
 package services.Coustom.Impl;
 
-import Repository.Custom.ForgotPasswodDao;
-import Repository.DaoFactory;
-import Util.DaoType;
+import repository.Custom.ForgotPasswodDao;
+import repository.DaoFactory;
+import util.DaoType;
 import services.Coustom.ForgotPasswordService;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;

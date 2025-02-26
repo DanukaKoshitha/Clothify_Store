@@ -1,0 +1,5 @@
+package util;
+
+public enum ServiceType {
+    USER,SUPPLIER,PRODUCT,PLACEORDER,REPORTS,DASHBOARD,LOGIN,FORGOTPASSWORD
+}

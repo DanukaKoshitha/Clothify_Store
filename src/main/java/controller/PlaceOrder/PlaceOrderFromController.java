@@ -1,11 +1,11 @@
 package controller.PlaceOrder;
 
-import DTO.PlaceOrder;
-import DTO.Product;
-import DTO.ProductOrder;
-import Util.InvoiceGenerator;
-import Util.ServiceType;
-import DTO.UserSession;
+import dto.PlaceOrder;
+import dto.Product;
+import dto.ProductOrder;
+import util.InvoiceGenerator;
+import util.ServiceType;
+import dto.UserSession;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,8 +21,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import services.Coustom.PlaceOrderService;
 import services.ServiceFactory;
-
-
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -94,8 +92,8 @@ public class PlaceOrderFromController implements Initializable {
         ScrollVBox.getChildren().clear();
 
         GridPane gridPane = new GridPane();
-        gridPane.setHgap(20);
-        gridPane.setVgap(20);
+        gridPane.setHgap(30);
+        gridPane.setVgap(30);
 
         int column = 0;
         int row = 0;
@@ -120,8 +118,8 @@ public class PlaceOrderFromController implements Initializable {
 
         // Product Image
         ImageView imageView = new ImageView();
-        imageView.setFitWidth(100);
-        imageView.setFitHeight(100);
+        imageView.setFitWidth(120);
+        imageView.setFitHeight(120);
 
         if (product.getImage() != null && !product.getImage().isEmpty()) {
             imageView.setImage(new Image("file:" + product.getImage())); // Load local image
@@ -131,7 +129,7 @@ public class PlaceOrderFromController implements Initializable {
 
         // Separator Line
         Separator separator = new Separator();
-        separator.setPrefWidth(100);
+        separator.setPrefWidth(120);
 
         // Product Details (Name and Price)
         Label nameLabel = new Label(product.getName());
@@ -154,8 +152,6 @@ public class PlaceOrderFromController implements Initializable {
 
         HBox qtyBox = new HBox(5, qtyLabel, qtySpinner);
         qtyBox.setAlignment(Pos.CENTER);
-
-
 
         // ✅ Now `qtySpinner` is accessible inside the lambda
         imageView.setOnMouseClicked(event -> {

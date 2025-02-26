@@ -1,8 +1,7 @@
 package services.Coustom;
 
-import DTO.Product;
+import dto.Product;
 import javafx.collections.ObservableList;
-import javafx.scene.layout.HBox;
 import services.SuperServices;
 
 import java.util.List;

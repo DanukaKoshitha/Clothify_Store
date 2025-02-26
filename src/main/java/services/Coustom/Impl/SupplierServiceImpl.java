@@ -1,10 +1,10 @@
 package services.Coustom.Impl;
 
-import Entity.SupplierEntity;
-import Repository.Custom.SupplierDao;
-import Repository.DaoFactory;
-import Util.DaoType;
-import DTO.Supplier;
+import entity.SupplierEntity;
+import repository.Custom.SupplierDao;
+import repository.DaoFactory;
+import util.DaoType;
+import dto.Supplier;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.modelmapper.ModelMapper;

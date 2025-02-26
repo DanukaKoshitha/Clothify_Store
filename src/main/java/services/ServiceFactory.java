@@ -1,6 +1,6 @@
 package services;
 
-import Util.ServiceType;
+import util.ServiceType;
 import services.Coustom.Impl.*;
 
 public class ServiceFactory {

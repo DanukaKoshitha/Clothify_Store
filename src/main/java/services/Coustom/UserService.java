@@ -1,8 +1,8 @@
 package services.Coustom;
 
 import javafx.collections.ObservableList;
-import DTO.User;
-import DTO.UserData;
+import dto.User;
+import dto.UserData;
 import services.SuperServices;
 
 public interface UserService extends SuperServices {

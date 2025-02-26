@@ -1,7 +1,7 @@
 package controller.LoginForm;
 
-import DTO.UserSession;
-import Util.ServiceType;
+import dto.UserSession;
+import util.ServiceType;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -53,6 +53,7 @@ public class LoginFormContrller {
     public void FogetPasswordOnAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/FogotPassword.fxml"))));
+        stage.setTitle("Forgot Password");
         stage.show();
     }
 }

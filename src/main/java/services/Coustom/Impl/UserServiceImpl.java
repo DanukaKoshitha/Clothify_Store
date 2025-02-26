@@ -1,10 +1,10 @@
 package services.Coustom.Impl;
 
-import DBConnection.dbConnection;
+import dbConnection.dbConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import DTO.User;
-import DTO.UserData;
+import dto.User;
+import dto.UserData;
 import services.Coustom.UserService;
 
 import java.sql.*;

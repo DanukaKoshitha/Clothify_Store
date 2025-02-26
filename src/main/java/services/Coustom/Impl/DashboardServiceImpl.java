@@ -1,9 +1,9 @@
 package services.Coustom.Impl;
 
-import DTO.Product;
-import Repository.Custom.DashboardDao;
-import Repository.DaoFactory;
-import Util.DaoType;
+import dto.Product;
+import repository.Custom.DashboardDao;
+import repository.DaoFactory;
+import util.DaoType;
 import services.Coustom.DashboardService;
 
 import java.util.List;

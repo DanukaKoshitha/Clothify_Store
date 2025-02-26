@@ -1,10 +1,8 @@
 package services.Coustom;
 
-import Entity.SupplierEntity;
-import DTO.Supplier;
+import dto.Supplier;
 import javafx.collections.ObservableList;
 import services.SuperServices;
-import java.util.List;
 
 public interface SupplierService extends SuperServices {
     boolean addSupplier(Supplier supplier);

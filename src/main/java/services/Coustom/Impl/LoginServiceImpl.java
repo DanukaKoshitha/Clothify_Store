@@ -1,8 +1,8 @@
 package services.Coustom.Impl;
 
-import Repository.Custom.LoginDao;
-import Repository.DaoFactory;
-import Util.DaoType;
+import repository.Custom.LoginDao;
+import repository.DaoFactory;
+import util.DaoType;
 import services.Coustom.LoginService;
 
 import java.sql.ResultSet;

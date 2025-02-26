@@ -9,17 +9,17 @@
 
 <AnchorPane prefHeight="475.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorderFram.Frame">
    <children>
-      <Pane prefHeight="50.0" prefWidth="854.0" style="-fx-background-color: #3742fa;">
+      <Pane prefHeight="50.0" prefWidth="960.0" style="-fx-background-color: #3742fa;">
          <children>
-            <Separator layoutX="614.0" layoutY="7.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="1.0" />
-            <Separator layoutX="470.0" layoutY="7.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="1.0" />
-            <Separator layoutX="315.0" layoutY="7.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="1.0" />
-            <Label fx:id="lblDate" alignment="CENTER" contentDisplay="CENTER" layoutX="343.0" layoutY="17.0" prefHeight="17.0" prefWidth="98.0" text="2020-20-23" textAlignment="CENTER" textFill="WHITE">
+            <Separator layoutX="700.0" layoutY="7.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="1.0" />
+            <Separator layoutX="505.0" layoutY="7.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="1.0" />
+            <Separator layoutX="318.0" layoutY="7.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="1.0" />
+            <Label fx:id="lblDate" alignment="CENTER" contentDisplay="CENTER" layoutX="361.0" layoutY="17.0" prefHeight="17.0" prefWidth="98.0" text="2020-20-23" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="lblTime" alignment="CENTER" contentDisplay="CENTER" layoutX="492.0" layoutY="17.0" prefHeight="17.0" prefWidth="98.0" text="12:45:03" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="lblTime" alignment="CENTER" contentDisplay="CENTER" layoutX="556.0" layoutY="17.0" prefHeight="17.0" prefWidth="98.0" text="12:45:03" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -29,11 +29,16 @@
                   <Font name="System Bold" size="19.0" />
                </font>
             </Label>
-            <Label fx:id="UserName" alignment="CENTER" layoutX="638.0" layoutY="11.0" prefHeight="28.0" prefWidth="142.0" textFill="WHITE">
+            <Label fx:id="UserName" alignment="CENTER" layoutX="756.0" layoutY="11.0" prefHeight="28.0" prefWidth="142.0" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </Label>
+            <ImageView fitHeight="38.0" fitWidth="42.0" layoutX="891.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../user.jpeg" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Pane layoutY="50.0" prefHeight="500.0" prefWidth="164.0" style="-fx-background-color: #ced6e0;">
@@ -101,6 +106,6 @@
             </JFXButton>
          </children>
       </Pane>
-      <AnchorPane fx:id="loadfom" layoutX="164.0" layoutY="50.0" prefHeight="500.0" prefWidth="690.0" />
+      <AnchorPane fx:id="loadfom" layoutX="164.0" layoutY="50.0" prefHeight="500.0" prefWidth="796.0" />
    </children>
 </AnchorPane>

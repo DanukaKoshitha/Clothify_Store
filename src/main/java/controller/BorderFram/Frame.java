@@ -1,6 +1,6 @@
 package controller.BorderFram;
 
-import DTO.UserSession;
+import dto.UserSession;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -105,6 +105,7 @@ public class Frame implements Initializable {
 
         /////////////   set the userName    //////////////
         UserName.setText(UserSession.getInstance().getUserName());
+        UserName.setText("Danuka");
     }
 
     public String getDate(){

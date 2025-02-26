@@ -1,12 +1,12 @@
 package services.Coustom.Impl;
 
-import DTO.PlaceOrder;
-import DTO.Product;
-import DTO.ProductOrder;
-import Entity.PlaceOrderEntity;
-import Repository.Custom.PlaceOrderDao;
-import Repository.DaoFactory;
-import Util.DaoType;
+import dto.PlaceOrder;
+import dto.Product;
+import dto.ProductOrder;
+import entity.PlaceOrderEntity;
+import repository.Custom.PlaceOrderDao;
+import repository.DaoFactory;
+import util.DaoType;
 import javafx.collections.ObservableList;
 import org.modelmapper.ModelMapper;
 import services.Coustom.PlaceOrderService;

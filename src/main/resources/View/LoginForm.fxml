@@ -1,31 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="312.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginForm.LoginFormContrller">
+<AnchorPane prefHeight="458.0" prefWidth="444.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginForm.LoginFormContrller">
    <children>
-      <ImageView fitHeight="498.0" fitWidth="449.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../3dlogin.jpg" />
-         </image>
-      </ImageView>
-      <TextField fx:id="txtEmail" layoutX="184.0" layoutY="232.0" promptText="               Email" />
-      <JFXButton layoutX="206.0" layoutY="354.0" onAction="#btnLoginOnAction" prefHeight="26.0" prefWidth="110.0" text="Login">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </JFXButton>
-      <PasswordField fx:id="txtPassword" layoutX="185.0" layoutY="290.0" promptText="            Password" />
-      <ImageView fitHeight="128.0" fitWidth="183.0" layoutX="197.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../loginwordimg.png" />
-         </image>
-      </ImageView>
-      <Hyperlink layoutX="279.0" layoutY="403.0" onAction="#FogetPasswordOnAction" text="Click Here" textFill="#ef0000" />
-      <Label layoutX="178.0" layoutY="406.0" prefHeight="18.0" prefWidth="102.0" text="Forgot Password  ?" />
+      <Pane prefHeight="458.0" prefWidth="444.0" style="-fx-background-color: #0c2461;">
+         <children>
+            <Label layoutX="99.0" layoutY="25.0" prefHeight="17.0" prefWidth="255.0" text="Clothify Store" textFill="#940202">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Label>
+            <Pane layoutX="84.0" layoutY="98.0" prefHeight="316.0" prefWidth="277.0" style="-fx-background-color: #0a3d62;">
+               <children>
+                  <TextField fx:id="txtEmail" layoutX="27.0" layoutY="70.0" prefHeight="25.0" prefWidth="221.0" promptText="Email" />
+                  <PasswordField fx:id="txtPassword" layoutX="28.0" layoutY="166.0" prefHeight="25.0" prefWidth="221.0" promptText="Password" />
+                  <Label layoutX="26.0" layoutY="34.0" prefHeight="17.0" prefWidth="94.0" text="User Name" textFill="#e7e7e7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="28.0" layoutY="128.0" prefHeight="17.0" prefWidth="94.0" text="Password" textFill="#e7e7e7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="79.0" layoutY="245.0" onAction="#btnLoginOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #01a3a4;" text="Login" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Hyperlink layoutX="244.0" layoutY="297.0" onAction="#FogetPasswordOnAction" text="Click Here" textFill="#ef0000" />
+      <Label layoutX="143.0" layoutY="300.0" prefHeight="18.0" prefWidth="102.0" text="Forgot Password  ?" textFill="WHITE" />
    </children>
 </AnchorPane>
